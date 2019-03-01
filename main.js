@@ -12,9 +12,9 @@ function makeRequest(url, method, formdata, callback) {
     })
 }
 
-function getAllStudents() {
+function getProduct() {
     var requestDataToPhp = new FormData()
-    requestDataToPhp.append("collectionType", "students")
+    requestDataToPhp.append("collectionType", "products")
     requestDataToPhp.append("action", "delete")
 
     makeRequest("requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
