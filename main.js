@@ -19,3 +19,11 @@ function getProduct() {
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
 }
+
+function addProductDB() {
+    var formProductID = document.forms["addProductForm"]["prodID"].value;
+    var addProduct = new FormData();
+    addProduct.append('formProductID', formProductID);
+
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", addProduct, (response) => { console.log(response) })
+}

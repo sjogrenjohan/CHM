@@ -9,10 +9,13 @@
 </head>
 <body>
 
+    <form name="addProductForm">
+        ProductID: <input type="text" placeholder="productID" name="prodID">
+        
+    </form>
 
-   
-
-        <button onclick="getProduct()">get</button>
+    <button onclick="addProductDB()">Spara produkt</button>
+    <button onclick="getProduct()">get</button>
     
 </body>
 </html>
