@@ -1,17 +1,14 @@
 <footer>
-<div class="container-fluid">
+<div class="container-fluid fixed-bottom">
     <div class="row"> 
-        <div class="col-lg">
-            <h1>CHM</h1>
-            <h5>Location: Götebrg</h5>
-            <h5>Address: Kruthusgatan 17</h5>
-            <h5>Kontakta oss: CHMcostumersupport@gmail.com</h5>
+        <div class="col-sm">
+            <p class="text-lg-left">Location: Götebrg</p>
+            <p class="text-sm-left">Address: Kruthusgatan 17</p>
+            <p class="text-sm-left">Kontakta oss: support@gmail.com</p>
+
         </div>
-        <div class ="col-lg"><br>
-            <a href="#">Bli Admin idag sidan</a><br>
-            <a href="#">Hur blir jag Admin?</a><br>
-            <a href="#">Vilka fördelar får jag som Adimin?</a><br>
-            <a href="#">Vad gör man som Admin?</a><br>
+        <div class ="col-sm"><br>
+            <h1 class="display-6 text-center">BILD HÄR?</h1>
         </div>
     </div>
 </div>
