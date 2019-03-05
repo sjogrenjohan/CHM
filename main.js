@@ -17,5 +17,5 @@ function getProduct() {
     requestDataToPhp.append("collectionType", "products")
     requestDataToPhp.append("action", "delete")
 
-    makeRequest("requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
 }
