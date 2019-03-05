@@ -1,6 +1,5 @@
 <?php
 include "html-start.php";
-include "html-end.php";
 include "header.php";
 ?>
 
@@ -51,4 +50,5 @@ include "header.php";
 
 <?php
 include "footer.php";
+include "html-end.php";
 ?>
