@@ -1,3 +1,4 @@
+<footer>
 <div class="container-fluid">
     <div class="row"> 
         <div class="col-lg">
@@ -7,10 +8,11 @@
             <h5>Kontakta oss: CHMcostumersupport@gmail.com</h5>
         </div>
         <div class ="col-lg"><br>
-            <a href="#">Bli Admain idag sidan</a><br>
+            <a href="#">Bli Admin idag sidan</a><br>
             <a href="#">Hur blir jag Admin?</a><br>
             <a href="#">Vilka fördelar får jag som Adimin?</a><br>
             <a href="#">Vad gör man som Admin?</a><br>
         </div>
     </div>
 </div>
+</footer>
