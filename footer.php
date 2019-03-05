@@ -1,5 +1,5 @@
 <footer>
-<div class="container-fluid fixed-bottom">
+<div class="container-fluid">
     <div class="row"> 
         <div class="col-sm">
             <p class="text-sm-left">Location: Götebrg</p>
