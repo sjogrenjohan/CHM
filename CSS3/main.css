@@ -7,3 +7,11 @@
 .jumbotron {
     margin-bottom: 0 !important;
 }
+
+.card {
+    margin: 0.2em;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
