@@ -23,8 +23,13 @@ function getProduct() {
 function addProductDB() {
     //var formProductID = document.forms["addProductForm"]["prodID"].value;
     var addProduct = new FormData();
-    addProduct.append("collectionType", "add");
+    addProduct.append("collectionType", "addProduct");
     addProduct.append('formProductID', document.forms["addProductForm"]["prodID"].value);
+    addProduct.append('formProductID', document.forms["addProductForm"]["unitPrice"].value);
+    addProduct.append('formProductID', document.forms["addProductForm"]["name"].value);
+    addProduct.append('formProductID', document.forms["addProductForm"]["productDesc"].value);
+    addProduct.append('formProductID', document.forms["addProductForm"]["unitsInStock"].value);
+    addProduct.append('formProductID', document.forms["addProductForm"]["weight"].value);
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", addProduct, (response) => { console.log(response) })
 }
