@@ -9,17 +9,13 @@
 </head>
 <body>
 
-    <form>
-        ProductID: <input type="text" name="productID">
-        Pris: <input type="number" name="unitPrice">
-        Namn: <input type="text" name="name">
-        Volym: <input type="text" name="volume">
-        Vikt: <input type="number" name="weight">
-        Upload image: <!-- upload code here -->
+    <form name="addProductForm">
+        ProductID: <input type="text" placeholder="productID" name="prodID">
+        
     </form>
 
     <button onclick="addProductDB()">Spara produkt</button>
-    <!--<button onclick="getProduct()">get</button>-->
+    <button onclick="getProduct()">get</button>
     
 </body>
 </html>
