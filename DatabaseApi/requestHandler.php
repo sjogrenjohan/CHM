@@ -13,8 +13,8 @@
 
             if($_POST["collectionType"] == "addProduct") {
                 $productHandler = new ProductHandler();
-                $addProductToDB = $productHandler->insertProduct($_POST["formProductID"]);
-                echo json_encode($addProductToDB);
+                $resultat = $productHandler->insertProduct($_POST["formProductID"], $_POST["formUnitPrice"], $_POST["formProductName"], $_POST["formProductDesc"], $_POST["formUnitsInStock"], $_POST["formProductWeight"]);
+                echo json_encode($resultat);
                 exit;
             }
 
