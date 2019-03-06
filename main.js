@@ -21,9 +21,10 @@ function getProduct() {
 }
 
 function addProductDB() {
-    var formProductID = document.forms["addProductForm"]["prodID"].value;
+    //var formProductID = document.forms["addProductForm"]["prodID"].value;
     var addProduct = new FormData();
-    addProduct.append('formProductID', formProductID);
+    addProduct.append("collectionType", "add");
+    addProduct.append('formProductID', document.forms["addProductForm"]["prodID"].value);
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", addProduct, (response) => { console.log(response) })
 }

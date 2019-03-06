@@ -4,13 +4,14 @@
     
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
-            /*if($_POST["collectionType"] == "products") {
+            if($_POST["collectionType"] == "products") {
                 $productHandler = new productHandler();
                 $databaseResult = $productHandler->getProduct();
                 echo json_encode($databaseResult);
                 exit;
-            }*/
-            if($_POST["formProductID"]){
+            }
+
+            if($_POST["collectionType"] == "add") {
                 $productHandler = new ProductHandler();
                 $addProductToDB = $productHandler->insertProduct($_POST["formProductID"]);
                 echo json_encode($addProductToDB);

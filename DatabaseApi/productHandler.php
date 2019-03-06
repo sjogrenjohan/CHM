@@ -27,13 +27,14 @@
             VALUES ($prodID, '250', 'Henrik', 'Ha', '4', '5', '150', 'NULL'");
             $query->execute();*/
             $query = $this->database->connection->prepare($sql);
-            $query->execute();
+            $res = $query->execute();
             
 
-            /*if(empty($result)){
+            if($res == false){
                 return array("error"=>"Går ej att lägga till produkt");
-            }*/
-            return array("nisse" => $prodID);
+            }else{
+                return array("Status:" => "Det gick bra");
+            }
          
         }
 
