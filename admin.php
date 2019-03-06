@@ -10,8 +10,13 @@
 <body>
 
     <form name="addProductForm">
-        ProductID: <input type="text" placeholder="productID" name="prodID">
-        
+        ProductID: <input type="text" name="prodID">
+        Pris: <input type="text" name="unitPrice">
+        Namn: <input type="text" name="name">
+        Produktbeskrivning: <input type="text" name="productDesc">
+        Antal produkter: <input type="text" name="unitsInStock">
+        Vikt: <input type="text" name="weight">
+        Lägg till bild <!-- kod för ladda upp fil -->
     </form>
 
     <button onclick="addProductDB()">Spara produkt</button>
