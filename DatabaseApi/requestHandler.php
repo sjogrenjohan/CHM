@@ -11,7 +11,7 @@
                 exit;
             }
 
-            if($_POST["collectionType"] == "add") {
+            if($_POST["collectionType"] == "addProduct") {
                 $productHandler = new ProductHandler();
                 $addProductToDB = $productHandler->insertProduct($_POST["formProductID"]);
                 echo json_encode($addProductToDB);
