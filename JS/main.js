@@ -35,3 +35,13 @@ function addProductDB() {
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", addProduct, (response) => { console.log(response) })
 }
+
+function updateProductDB() {
+    var updateUnits = new FormData()
+    updateUnits.append("collectionType", "units")
+    updateUnits.append('prodID', document.forms["updateStock"]["prodID"].value) 
+    updateUnits.append('updateUnit', document.forms["updateStock"]["units"].value) 
+
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", updateUnits, (response) => { console.log(response) })
+
+}

@@ -22,8 +22,19 @@
                     $_POST["formProductHeight"], 
                     $_POST["formProductWidth"], 
                     $_POST["formProductLength"], 
-                    $_POST["formProductWeight"]);
+                    $_POST["formProductWeight"]
+                );
                 echo json_encode($resultat);
+                exit;
+            }
+
+            if($_POST["collectionType"] == "units") {
+                $productHandler = new productHandler();
+                $unit = $productHandler->updateProduct(
+                    $_POST["prodID"],
+                    $_POST["updateUnit"]
+                );
+                echo json_encode($unit);
                 exit;
             }
 
