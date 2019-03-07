@@ -24,14 +24,19 @@
         <a class="nav-link" href="#">Startsida</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Kontakta oss</a>
+        <a class="nav-link" href="#">Admin</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" placeholder="Username">
-      <input class="form-control mr-sm-2" placeholder="Password">
-      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Login</button>&nbsp;&nbsp;
-      <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Register</button>
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="login.php">Logga in
+          <i class="cartStyle fas fa-user"></i></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="cart.php"><i class="cartStyle fas fa-shopping-cart"></i></a>
+        </li>
+      </ul>
     </form>
   </div>
 </nav>
