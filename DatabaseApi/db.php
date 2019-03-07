@@ -6,4 +6,5 @@ $db = new mysqli('localhost','root','','chmgrupp');
         echo $db->connect_errno. "<br>";
             die("connection failed");
     }
+
 ?>
