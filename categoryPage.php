@@ -2,7 +2,7 @@
     include "./includes/html-start.php";
     include "./includes/header.php";
 ?>
-
+<script type="text/javascript" src="./JS/categoryLogic.js"></script>
 <div class="jumbotron">
     <div class="container">
         <div id="productContainer" class="row">
