@@ -9,7 +9,7 @@
 <body>
  
 
-<form action="loginfunc.php" method="post">
+<form action="./loginSystem/loginfunc.php" method="post">
     <input type="text" name="username">
     <br>
     <input type="password" name="password">

@@ -1,29 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+<?php
+// error handler show no error to user if connection or other problems happen
+error_reporting(0); 
+// include data base connection
+include '../DatabaseApi/db.php';
+// include a random user id generator
+include 'UserID.php';
+// getting account from register for user
+$userName = mysqli_real_escape_string($db,$_POST['user']); 
+$userEmail = mysqli_real_escape_string($db, $_POST['email']);
+$userPassword = mysqli_real_escape_string($db, $_POST['password']);
+$repeteUserPassword = mysqli_real_escape_string($db,$_POST['repetPassword']);
+$defultAdnimpostion = "not admin";
 
-<form action="register.php" method="post">
-<label for=""> name</label>
-<input type="text" name="user">
-<br>
-<label for="">email</label>
-<input type="text" name="email">
-<br>
-<label for="">password</label>
-<input type="text" name="password">
-<br>
-<label for="">repeatePassword</label>
-<input type="text" name="repetPassword">
-<button type="submit">register</button>
-</form>
+// make a an array of the database informtaion Username && UserID
+$resultOfDataBase = $db->query("SELECT UserName FROM users");
+$dataOfUserName = [];
 
-<a href="login.php">login</a>
-    
-</body>
-</html>
+// klar 
+if(mysqli_num_rows($resultOfDataBase)) 
+{
+     while($row = mysqli_fetch_assoc($resultOfDataBase)) {
+          $dataOfUserName[] = $row;
+          foreach ($dataOfUserName as $key) {
+           
+               foreach ( $key as $value) {
+             
+                   if($userName == $value) {
+                    header("location: ./index.php?error=userAlreadyexist=".$userName."&mail=".$userEmail."&password=");
+                    exit(); 
+                   } 
+               }
+          }
+     }
+}
+ 
+// checking for anny problems before registering a person to the database
+if(empty($userName) || empty($userEmail) || empty($userPassword))
+{
+    header("location: ./index.php?error=emptyfieldsuid=".$userName."&mail=".$userEmail."&password=");
+    exit();
+}
+
+else if(!filter_var($userEmail, FILTER_VALIDATE_EMAIL))
+{
+     header("location: ./index.php?error=emptyfieldsuid=".$userName."&mail=".$userEmail."&password=");
+     exit();
+}
+
+else if(!preg_match("/^[a-zA-Z0-9]*$/", $userName))
+{
+     header("location: ./index.php?error=emptyfieldsuid=".$userName."&mail=".$userEmail."&password=");
+     exit();
+}
+else if ($userPassword !== $repeteUserPassword) 
+{
+      header();
+      exit();
+}
+  else 
+ {
+     $hasedPassowrd = password_hash($userPassword, PASSWORD_BCRYPT);
+
+     if($insert = $db->query("INSERT INTO users (UserID,UserName,Email,Password,Role) VALUES ('{$userID}','{$userName}','{$userEmail}','{$hasedPassowrd}', '{$defultAdnimpostion}') ")) {
+          echo $db->affected_rows;
+          exit();
+     }
+}
+
+
+?>
