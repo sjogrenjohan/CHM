@@ -8,14 +8,18 @@
 </head>
 <body>
  
+<div>
+    
+    <form action="./loginSystem/loginfunc.php" method="post">
+        <input type="text" name="username">
+        <br>
+        <input type="password" name="password">
+        <button type="submit">login</button>
+    </form>    
+    <a href="register.php">reg here</a>
 
-<form action="./loginSystem/loginfunc.php" method="post">
-    <input type="text" name="username">
-    <br>
-    <input type="password" name="password">
-    <button type="submit">login</button>
-</form>    
-<a href="register.php">reg here</a>
+</div>
+
     
 </body>
 </html>
