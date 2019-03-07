@@ -25,10 +25,13 @@ function addProductDB() {
     var addProduct = new FormData();
     addProduct.append("collectionType", "addProduct");
     addProduct.append('formProductID', document.forms["addProductForm"]["prodID"].value);
-    addProduct.append('formUnitPrice', document.forms["addProductForm"]["unitPrice"].value);
     addProduct.append('formProductName', document.forms["addProductForm"]["name"].value);
+    addProduct.append('formUnitPrice', document.forms["addProductForm"]["unitPrice"].value);
     addProduct.append('formProductDesc', document.forms["addProductForm"]["productDesc"].value);
     addProduct.append('formUnitsInStock', document.forms["addProductForm"]["unitsInStock"].value);
+    addProduct.append('formProductHeight', document.forms["addProductForm"]["height"].value);
+    addProduct.append('formProductWidth', document.forms["addProductForm"]["width"].value);
+    addProduct.append('formProductLength', document.forms["addProductForm"]["length"].value);
     addProduct.append('formProductWeight', document.forms["addProductForm"]["weight"].value);
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", addProduct, (response) => { console.log(response) })

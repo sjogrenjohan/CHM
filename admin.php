@@ -11,10 +11,13 @@
 
     <form name="addProductForm">
         ProductID: <input type="text" name="prodID">
-        Pris: <input type="text" name="unitPrice">
         Namn: <input type="text" name="name">
+        Pris: <input type="text" name="unitPrice">
         Produktbeskrivning: <input type="text" name="productDesc">
         Antal produkter: <input type="text" name="unitsInStock">
+        Höjd: <input type="text" name="height">
+        Bredd: <input type="text" name="width">
+        Längd: <input type="text" name="length">
         Vikt: <input type="text" name="weight">
         Lägg till bild <!-- kod för ladda upp fil -->
     </form>
