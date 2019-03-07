@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>CHM - Computer Hardware Market - When Quality Matters</title>
+    <link rel="stylesheet" href="./CSS3/login.css">
 </head>
 <body>
- 
-<div>
+
+<div class="form_div_background">
+
     
+    <img src="./images/img-01.png"  id="socailImage"alt="" srcset="">
+    
+    <h3 class="title">Sign in or sign up </h3>
     <form action="./loginSystem/loginfunc.php" method="post">
-        <input type="text" name="username">
-        <br>
-        <input type="password" name="password">
-        <button type="submit">login</button>
+    <p class="information">In order to purchase products form <br> CHM you have to have an account. <br> This is becuse we want our costumers<br>to the ablity to say what they think</p>
+
+       <input type="text" name="username" id="username" placeholder="Username">
+
+        <input type="password" name="password" id="password" placeholder="Password">
+
+        <button type="submit" class="loginButton"><p class="buttonText">login</p></button>
     </form>    
-    <a href="register.php">reg here</a>
+    <a href="register.php" class="createAcount">Create your account here</a>
 
 </div>
 
