@@ -4,10 +4,8 @@ include "./includes/header.php";
 ?>
 
 <div class="jumbotron">
-    <img src="./Images/57.png" class="img-fluid" alt="Responsive image">
-
     <div class="container">
-        <div id="categoryContainer" class="row">
+        <div id="cartContainer" class="row">
             
         </div>
     </div>

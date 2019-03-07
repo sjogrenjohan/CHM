@@ -1,5 +1,5 @@
 <?php
-    include "html-start.php";
+    include "./includes/html-start.php";
 ?>
 
 
@@ -75,5 +75,5 @@
 </div>
 
 <?php
-    include "html-end.php";
+    include "./includes/html-end.php";
 ?>
