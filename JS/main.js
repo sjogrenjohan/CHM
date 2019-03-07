@@ -21,7 +21,6 @@ function getProduct() {
 }
 
 function addProductDB() {
-    //var formProductID = document.forms["addProductForm"]["prodID"].value;
     var addProduct = new FormData();
     addProduct.append("collectionType", "addProduct");
     addProduct.append('formProductID', document.forms["addProductForm"]["prodID"].value);
