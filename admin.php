@@ -44,7 +44,7 @@
     <div class="col-lg-2">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link" href="#">Beställningar</a>
+                <a class="nav-link" href="./index.php">Till CHM</a>
             </li>
         </ul>
     </div>
