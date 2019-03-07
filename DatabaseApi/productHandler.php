@@ -30,8 +30,20 @@
                 return array("error"=>"Går ej att lägga till produkt");
             }else{
                 return array("Status:" => "Det gick bra");
+            } 
+        }
+
+        public function updateProduct($prodID, $updateUnit) {
+            $sql = "UPDATE `products` SET `UnitsInStock`= UnitsInStock + $updateUnit WHERE `ProductID`= $prodID";
+            $query = $this->database->connection->prepare($sql);
+            $res = $query->execute();
+
+
+            if($res == false){
+                return array("error"=>"Går ej att uppdatera lagersaldo");
+            }else{
+                return array("Status:" => "Lagersaldo uppdaterat");
             }
-         
         }
 
     }
