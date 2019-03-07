@@ -1,0 +1,17 @@
+.container-fluid{
+    padding-top: 0.5em;
+    background-color: orange;
+    color: white;
+}
+
+.jumbotron {
+    margin-bottom: 0 !important;
+}
+
+.card {
+    margin: 0.2em;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
