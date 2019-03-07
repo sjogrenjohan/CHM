@@ -16,7 +16,8 @@
     
     <h3 class="title">Sign in or sign up </h3>
     <form action="./loginSystem/loginfunc.php" method="post">
-    <p class="information">In order to purchase products form <br> CHM you have to have an account. <br> This is becuse we want our costumers<br>to the ablity to say what they think</p>
+    <p class="information">In order to purchase products form <br> CHM you have to have an account. <br>
+     This is becuse we want our costumers<br>to the ablity to say what they think</p>
 
        <input type="text" name="username" id="username" placeholder="Username">
 
