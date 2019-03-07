@@ -11,7 +11,7 @@
 
     <form name="updateStock">
         ProductID: <input type="text" name="prodID">
-        Lagersaldo: <input type="text" name="units">
+        Lagersaldo: <input type="number" name="units">
     </form>
 
     <button onclick="updateProductDB()">Uppdatera lagersaldo</button>
