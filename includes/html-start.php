@@ -7,6 +7,9 @@
 
     <title>CHM - Computer Hardware Market - When Quality Matters</title>
 
+    <!-- Change base directory when uploading to Binero -->
+    <base href="http://localhost/CHM/"/>
+
     <!-- CSS -->
     <link rel="stylesheet" href="./CSS3/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
