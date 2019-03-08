@@ -60,7 +60,7 @@
 </div>
 <div class="row justify-content-md-center">
     <button class="btn btn-primary" onclick="deleteProductDB()">Radera produkt</button>&nbsp;
-    <button class="btn btn-primary" onclick="getProduct()">get</button>
+    <button class="btn btn-primary" onclick="getProduct()">Hämta produkt</button>
 </div>
 
 
