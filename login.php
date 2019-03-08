@@ -12,7 +12,7 @@
 <div class="form_div_background">
 
     
-    <img src="./images/img-01.png"  id="socailImage"alt="" srcset="">
+    <canvas></canvas>
     
     <h3 class="title">Sign in or sign up </h3>
     <form action="./loginSystem/loginfunc.php" method="post">
@@ -30,5 +30,6 @@
 </div>
 
     
+    <script src="./JS/cube.js"></script>
 </body>
 </html>

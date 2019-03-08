@@ -24,6 +24,10 @@ if(mysqli_num_rows($resultOfDataBase))
                 }
 
             }
+            else if($user["UserName"] !== $userName && !password_verify($password,$user["Password"] ))
+            {
+                die("this is wrong");
+            }
         }
     }
 }
