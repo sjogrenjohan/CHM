@@ -11,7 +11,12 @@ $resultOfDataBase = $db->query("SELECT UserID,UserName,Password,Role FROM users"
 $UserDataBaseResult = [];
 $defultAdnimpostion = "not admin";
 
-if(mysqli_num_rows($resultOfDataBase)) 
+if (empty($userName) || empty($password)) {
+    header("location: ../login.php?error=Emptyfields");
+    exit(); 
+}
+ 
+elseif(mysqli_num_rows($resultOfDataBase)) 
 {
     while($row = mysqli_fetch_assoc($resultOfDataBase)) {
         $UserDataBaseResult[] = $row;
@@ -33,7 +38,8 @@ if(mysqli_num_rows($resultOfDataBase))
             }
             else if($user["UserName"] !== $userName && !password_verify($password,$user["Password"] ))
             {
-                die("this is wrong");
+                header("location: ../login.php?error=Wrong_User_Infromation"); 
+                exit();
             }
         }
     }
