@@ -7,7 +7,6 @@
             $this->database = new Database();
         }
 
-        // Get all students
         public function getProduct() {
             $query = $this->database->connection->prepare("SELECT * FROM products;");
             $query->execute();
