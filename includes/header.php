@@ -34,7 +34,7 @@
               <i class="cartStyle fas fa-user"></i></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="cart.php"><i class="cartStyle fas fa-shopping-cart"></i></a>
+              <a class="nav-link" href="cartPage.php"><i class="cartStyle fas fa-shopping-cart"></i></a>
             </li>
           </ul>
         </form>
