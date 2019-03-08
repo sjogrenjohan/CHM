@@ -39,6 +39,15 @@
                 exit;
             }
 
+            if($_POST ["collectionType"] == "delete") {
+                $productHandler = new productHandler();
+                $delete = $productHandler->deleteProduct(
+                    $_POST["deleteProduct"]
+                );
+                echo json_encode($delete);
+                exit;
+            }
+
             if($_POST["collectionType"] == "categories") {
                 $categoryHandler = new categoryHandler();
                 $databaseResult = $categoryHandler->getCategory();
@@ -54,7 +63,5 @@
     } else {
         echo json_encode("Not a POST request.");
     }
-
-    
 
 ?>

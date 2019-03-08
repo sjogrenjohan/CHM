@@ -45,6 +45,18 @@
             }
         }
 
+        public function deleteProduct($prodID) {
+            $sql = "DELETE FROM `products` WHERE `products` . `ProductID` = $prodID";
+            $query = $this->database->connection->prepare($sql);
+            $res = $query->execute();
+
+            if($res == false){
+                return array("error" => "Går ej att radera!");
+            } else {
+                return array("Status" => "produktID = $prodID är raderad.");
+            }
+        }
+
     }
 
 

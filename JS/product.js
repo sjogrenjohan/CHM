@@ -15,7 +15,6 @@ function makeRequest(url, method, formdata, callback) {
 function getProduct() {
     var requestDataToPhp = new FormData()
     requestDataToPhp.append("collectionType", "products")
-    requestDataToPhp.append("action", "delete")
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
 
@@ -47,5 +46,11 @@ function updateProductDB() {
 }
 
 function deleteProductDB() {
+    if(confirm('Är du helt säker på att du vill TA BORT denna produkt?')) {
+        var deleteData = new FormData();
+        deleteData.append("collectionType", "delete")
+        deleteData.append('deleteProduct', document.forms["deleteProduct"]["prodID"].value);
     
+        makeRequest("./DatabaseApi/requestHandler.php", "POST", deleteData, (response) => { console.log(response) })  
+    };
 }

@@ -21,9 +21,12 @@ function getCategory() {
     makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
 }
 
-function showContent() {
+
+function showCategory() {
+
     var temp = document.getElementsByTagName("template")[0];
     var clon = temp.content.cloneNode(true);
+    productContainer.appendChild(clon);
     
-    document.body.appendChild(clon);
   }
+  
