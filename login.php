@@ -12,7 +12,7 @@
 <div class="form_div_background">
 
     
-    <canvas></canvas>
+   <!--  <canvas></canvas> -->
     
     <h3 class="title">Sign in or sign up </h3>
     <form action="./loginSystem/loginfunc.php" method="post">
