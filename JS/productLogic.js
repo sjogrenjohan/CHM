@@ -1,3 +1,9 @@
+initPage();
+
+function initPage() {
+    getProduct();
+}
+
 
 function makeRequest(url, method, formdata, callback) {
     fetch(url, {
@@ -17,13 +23,20 @@ function getProduct() {
     requestDataToPhp.append("collectionType", "products")
     requestDataToPhp.append("action", "delete")
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => {showProduct(response)})
 }
 
-function showProduct() {
-
-    var temp = document.getElementsByTagName("template")[0];
-    var clon = temp.content.cloneNode(true);
-    productContainer.appendChild(clon);
+function showProduct(products) {
+    var productContainer = document.getElementById("productContainer")
+    
+    products.forEach(product => {
+        console.log(product.ImageURL)
+        var productBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
+        productBox.querySelector('.card-img-top').src = "./productImages/" + product.ImageURL;
+        productBox.querySelector('.card-title').innerText = product.Name;
+        productBox.querySelector('.card-text').innerText = product.UnitPrice + ":-";
+        productBox.querySelector('.two').innerText = product.UnitsInStock + " st i lager";
+        productContainer.appendChild(productBox); 
+    })
     
   }
