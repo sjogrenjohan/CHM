@@ -8,7 +8,6 @@ function makeRequest(url, method, formdata, callback) {
         return data.json()
     }).then((result) => {
         callback(result)
-        console.log(result)
     }).catch((err)=>{
         console.log(err)
     })
@@ -21,3 +20,10 @@ function getCategory() {
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
 }
+
+function showContent() {
+    var temp = document.getElementsByTagName("template")[0];
+    var clon = temp.content.cloneNode(true);
+    
+    document.body.appendChild(clon);
+  }
