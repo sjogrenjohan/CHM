@@ -19,3 +19,11 @@ function getProduct() {
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
 }
+
+function showProduct() {
+
+    var temp = document.getElementsByTagName("template")[0];
+    var clon = temp.content.cloneNode(true);
+    productContainer.appendChild(clon);
+    
+  }
