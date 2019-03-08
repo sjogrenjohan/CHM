@@ -23,7 +23,7 @@
     <div class="col-lg-2">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link" href="#">Ta bort produkt</a>
+                <a class="nav-link" href="./deleteProduct.php">Ta bort produkt</a>
             </li>
         </ul>
     </div>
