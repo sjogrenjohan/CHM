@@ -22,9 +22,12 @@ if(mysqli_num_rows($resultOfDataBase))
                 if($user["Role"] == $defultAdnimpostion) {
                     session_start();
                     $_SESSION['loggedinCostumer'] = $user["UserID"];
-                    echo $_SESSION['loggedinCostumer'];
-                    echo json_encode(true);
                     exit();
+                }
+
+                elseif ($user["Role"] !== $defultAdnimpostion) {
+                    session_start();
+                    $_SESSION["loggedinAdmin"] = $user["UserID"];
                 }
 
             }
