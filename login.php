@@ -6,6 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CHM - Computer Hardware Market - When Quality Matters</title>
     <link rel="stylesheet" href="./CSS3/login.css">
+    <style>
+    form {
+    margin:0 !important;
+    background-color: rgb(255, 255, 255);
+    height: 80%;
+    width: 50%;
+    position: relative;
+    left: 50%;
+    bottom: 0%;
+}
+    </style>
 </head>
 <body>
 
