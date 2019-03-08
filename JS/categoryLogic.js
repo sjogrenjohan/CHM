@@ -1,4 +1,9 @@
-getCategory();
+initPage();
+
+function initPage() {
+    getCategory();
+}
+
 
 function makeRequest(url, method, formdata, callback) {
     fetch(url, {
@@ -18,15 +23,21 @@ function getCategory() {
     requestDataToPhp.append("collectionType", "categories")
     requestDataToPhp.append("action", "delete")
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => {showCategory(response)})
 }
 
 
-function showCategory() {
 
-    var temp = document.getElementsByTagName("template")[0];
-    var clon = temp.content.cloneNode(true);
-    productContainer.appendChild(clon);
-    
-  }
+function showCategory(categories) {
+    console.log(categories)
+    var categoryContainer = document.getElementById("categoryContainer")
+
+    categories.forEach(category => {
+        console.log(category.Name)
+        var categoryBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
+        categoryBox.querySelector('.card-img-top').innerText = category.Name;
+        categoryBox.querySelector('.card-text').innerText = category.CatDescription;
+        categoryContainer.appendChild(categoryBox); 
+    })
+}
   
