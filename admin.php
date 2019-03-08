@@ -8,14 +8,14 @@
     <div class="col-lg-2">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link" href="#">Lägg till produkt</a>
+                <a class="nav-link" href="./admin.php">Lägg till produkt</a>
             </li>
         </ul>
     </div>
     <div class="col-lg-2">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-              <a class="nav-link" href="#">Uppdatera produkt</a>
+              <a class="nav-link" href="./updateProduct.php">Uppdatera produkt</a>
             </li>
         </ul>
     </div>
