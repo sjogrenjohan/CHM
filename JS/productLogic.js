@@ -4,7 +4,6 @@ function initPage() {
     getProduct();
 }
 
-
 function makeRequest(url, method, formdata, callback) {
     fetch(url, {
         method: method,

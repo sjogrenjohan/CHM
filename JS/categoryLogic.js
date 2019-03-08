@@ -4,7 +4,6 @@ function initPage() {
     getCategory();
 }
 
-
 function makeRequest(url, method, formdata, callback) {
     fetch(url, {
         method: method,
@@ -25,8 +24,6 @@ function getCategory() {
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => {showCategory(response)})
 }
-
-
 
 function showCategory(categories) {
     var categoryContainer = document.getElementById("categoryContainer")
