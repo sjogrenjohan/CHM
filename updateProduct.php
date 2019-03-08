@@ -21,7 +21,7 @@
     <div class="col-lg-2">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link" href="#">Ta bort produkt</a>
+                <a class="nav-link" href="./deleteProduct.php">Ta bort produkt</a>
             </li>
         </ul>
     </div>
@@ -61,7 +61,7 @@
 </div>
 <div class="row justify-content-md-center">
     <button class="btn btn-primary" onclick="updateProductDB()">Uppdatera lagersaldo</button>&nbsp;
-    <button class="btn btn-primary" onclick="getProduct()">get</button>
+    <button class="btn btn-primary" onclick="getProduct()">Hämta produkt</button>
 </div>
 
 
