@@ -29,14 +29,14 @@ function getCategory() {
 
 
 function showCategory(categories) {
-    console.log(categories)
+    //console.log(categories)
     var categoryContainer = document.getElementById("categoryContainer")
 
     categories.forEach(category => {
-        console.log(category.Name)
+        
         var categoryBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
-        categoryBox.querySelector('.card-img-top').innerText = category.Name;
-        categoryBox.querySelector('.card-text').innerText = category.CatDescription;
+        categoryBox.querySelector('.card-img-top').innerText = category.Image;
+        categoryBox.querySelector('.card-text').innerText = category.Name;
         categoryContainer.appendChild(categoryBox); 
     })
 }
