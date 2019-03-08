@@ -1,4 +1,3 @@
-console.log("hejhej")
 getCategory();
 
 function makeRequest(url, method, formdata, callback) {
@@ -9,6 +8,7 @@ function makeRequest(url, method, formdata, callback) {
         return data.json()
     }).then((result) => {
         callback(result)
+        console.log(result)
     }).catch((err)=>{
         console.log(err)
     })

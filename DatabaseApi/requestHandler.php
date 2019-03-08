@@ -1,6 +1,7 @@
 <?php
 
     include "productHandler.php";
+    include "categoryHandler.php";
     
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
@@ -35,6 +36,13 @@
                     $_POST["updateUnit"]
                 );
                 echo json_encode($unit);
+                exit;
+            }
+
+            if($_POST["collectionType"] == "categories") {
+                $categoryHandler = new categoryHandler();
+                $databaseResult = $categoryHandler->getCategory();
+                echo json_encode($databaseResult);
                 exit;
             }
 
