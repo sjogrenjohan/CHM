@@ -13,7 +13,7 @@ include "./includes/header.php";
             <template>
                 <div class="col-sm-6 col-md-4 col-lg-3 no-padding">
                     <div class="card text-center">
-                        <a class="nav-link" href=""><img src="" class="card-img-top" alt=""></a>
+                        <img src="" class="card-img-top" alt="">
                         <h5 class="card-title"></h5>
                         <div class="card-body">
                             <p class="card-text"></p>
