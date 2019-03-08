@@ -5,6 +5,8 @@ error_reporting(0);
 include '../DatabaseApi/db.php';
 // include a random user id generator
 include 'UserID.php';
+// get to make user info to re-write account username email 
+include 'errorHandler.php';
 // getting account from register for user
 $userName = mysqli_real_escape_string($db,$_POST['user']); 
 $userEmail = mysqli_real_escape_string($db, $_POST['email']);
@@ -35,7 +37,7 @@ if(mysqli_num_rows($resultOfDataBase))
 
 // checking for anny problems before registering a person to the database
 if(empty($userName) || empty($userEmail) || empty($userPassword))
-{
+{    
      header("location: ../register.php?error=emptyfieldsuid=".$userName."&mail=".$userEmail."&password=");
      exit();
 }
