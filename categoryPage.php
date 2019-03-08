@@ -21,6 +21,9 @@
 </div>
 
 <script type="text/javascript" src="./JS/categoryLogic.js"></script>
+<script>
+    getCategory();
+</script>
 <?php
     include "./includes/footer.php";
     include "./includes/html-end.php";

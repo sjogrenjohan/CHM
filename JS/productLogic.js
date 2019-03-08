@@ -1,8 +1,4 @@
-initPage();
-
-function initPage() {
-    getProduct();
-}
+var numberOfProductsToRender;
 
 function makeRequest(url, method, formdata, callback) {
     fetch(url, {
@@ -17,7 +13,8 @@ function makeRequest(url, method, formdata, callback) {
     })
 }
 
-function getProduct() {
+function getProduct(numberOfProducts) {
+    numberOfProductsToRender = numberOfProducts
     var requestDataToPhp = new FormData()
     requestDataToPhp.append("collectionType", "products")
     requestDataToPhp.append("action", "delete")
@@ -27,8 +24,12 @@ function getProduct() {
 
 function showProduct(products) {
     var productContainer = document.getElementById("productContainer")
-    
+    var productCount = 0;
+
     products.forEach(product => {
+        if(productCount == numberOfProductsToRender) {
+            return
+        }
         console.log(product.ImageURL)
         var productBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
         productBox.querySelector('.card-img-top').src = "./productImages/" + product.ImageURL;
@@ -36,6 +37,7 @@ function showProduct(products) {
         productBox.querySelector('.card-text').innerText = product.UnitPrice + ":-";
         productBox.querySelector('.two').innerText = product.UnitsInStock + " st i lager";
         productContainer.appendChild(productBox); 
+        productCount++
     })
     
   }

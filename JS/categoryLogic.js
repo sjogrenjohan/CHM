@@ -1,8 +1,3 @@
-initPage();
-
-function initPage() {
-    getCategory();
-}
 
 function makeRequest(url, method, formdata, callback) {
     fetch(url, {
