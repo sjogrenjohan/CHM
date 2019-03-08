@@ -18,6 +18,7 @@ function getProduct() {
     requestDataToPhp.append("action", "delete")
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
+
 }
 
 function addProductDB() {
@@ -43,5 +44,8 @@ function updateProductDB() {
     updateUnits.append('updateUnit', document.forms["updateStock"]["units"].value) 
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", updateUnits, (response) => { console.log(response) })
+}
 
+function deleteProductDB() {
+    
 }
