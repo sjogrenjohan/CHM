@@ -27,7 +27,8 @@ if(mysqli_num_rows($resultOfDataBase))
               foreach ( $key as $value) {
             
                   if($userName == $value) {
-                   header("location: ../register.php?error=userAlreadyexist=".$userName."&mail=".$userEmail."&password=");
+                 
+                     header("location: ../register.php?error=userAlreadyexist=".$userName."&mail=".$userEmail); 
                    exit(); 
                   } 
               }

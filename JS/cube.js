@@ -64,13 +64,14 @@ function project(points3d, width, height) {
 var rotaionx = Math.random()* 0.05;
 var rotationy = Math.random()*0.05 ;
 
+
 function loop() {
 
         window.requestAnimationFrame(loop);
 
         height = document.documentElement.clientHeight;
         width = document.documentElement.clientWidth;
-
+      
         context.canvas.height = height;
         context.canvas.width  = width;
         context.fillStyle = "#ffffff";
