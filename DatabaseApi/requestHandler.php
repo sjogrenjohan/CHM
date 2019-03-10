@@ -2,6 +2,7 @@
 
     include "productHandler.php";
     include "categoryHandler.php";
+    include "newsLetterHandler.php";
     
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
