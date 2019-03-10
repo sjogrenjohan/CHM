@@ -13,11 +13,12 @@ function makeRequest(url, method, formdata, callback) {
 }
 
 function signUpNews() {
-    var newsLetterData = new FormData()
-    newsLetterData.append("newsLetter", "contact")
+    console.log("hello");
+      /*var newsLetterData = new FormData()
+    newsLetterData.append("collectionType", "contact")
     newsLetterData.append("registerName", document.forms["signUpNewsLetter"]["signUpName"].value);
     newsLetterData.append("registerEmail", document.forms["signUpNewsLetter"]["signUpEmail"].value);
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", newsLetterData, (response) => { console.log(response) })
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", newsLetterData, (response) => { console.log(response) })*/
 
 }

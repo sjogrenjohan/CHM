@@ -1,6 +1,6 @@
 <?php
 
-    class newsLetter {
+    class NewsLetter {
 
         function __construct() {
             include_once('databaseHandler.php');
@@ -8,7 +8,7 @@
         }
 
         // register newsletters
-        public function NewsletterSignUp($ID, $name, $email) {
+        public function newsletterSignUp($ID, $name, $email) {
             $sql = "INSERT INTO `newsletter_signup`(`ID`, `Name`, `Email`) VALUES ('$ID', '$name', '$email')";
             $query = $this->database->connection->prepare($sql);
             $res = $query->execute();
