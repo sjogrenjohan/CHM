@@ -8,8 +8,12 @@
     <title>Document</title>
 </head>
 <body>
+    <form name="signUp">
+        <input type="text" name="name">
+        <input type="email" name="email">
+    </form>
 
-    <button onclick="signUp()">TEST</button>
+    <button onclick="signUp()">Registrera dig till nyhetsbrevet!</button>
     
 </body>
 </html>
