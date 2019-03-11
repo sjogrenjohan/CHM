@@ -1,6 +1,5 @@
 <?php
 include '../DatabaseApi/db.php';
-
 // getting user information
 $userName = mysqli_real_escape_string($db, $_POST['username']);
 $password = mysqli_real_escape_string($db, $_POST['password']); 

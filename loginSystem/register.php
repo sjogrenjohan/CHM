@@ -3,6 +3,7 @@
 error_reporting(0); 
 // include data base connection
 include '../DatabaseApi/db.php';
+
 // include a random user id generator
 include 'UserID.php';
 // get to make user info to re-write account username email 
@@ -76,7 +77,7 @@ else if ($userPassword !== $repeteUserPassword)
      if($insert = $db->query("INSERT INTO users (UserID,UserName,Email,Password,Role) VALUES ('{$userID}','{$userName}','{$userEmail}','{$hasedPassowrd}', '{$defultAdnimpostion}') ")) {
           echo $db->affected_rows;
           session_start();
-          $_SESSION['loggedinCostumer'] = $userID;
+          $_SESSION['loggedinCostumer'] = $defultAdnimpostion;
           header("location: ../index.php?");  
           exit();
      }
