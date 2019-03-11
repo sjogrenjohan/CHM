@@ -14,6 +14,8 @@
     </form>
 
     <button onclick="signUp()">Registrera dig till nyhetsbrevet!</button>
+
+    <button onclick="getNewsletter()">Hämta alla personer som vill ha nyhetsbrev</button>
     
 </body>
 </html>

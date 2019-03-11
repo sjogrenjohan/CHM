@@ -30,7 +30,7 @@
     <div class="col-lg-2">
         <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-                <a class="nav-link" href="#">Nyhetsbrev</a>
+                <a class="nav-link" href="./newsletter.php">Nyhetsbrev</a>
             </li>
         </ul>
     </div>
