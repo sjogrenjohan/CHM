@@ -51,7 +51,7 @@
 </div>
 <div class="jumbotron">
     <div class="container">
-        <div id="newsletterContainer" class="row">
+        <div id="newsletterContainer">
             <template>
                 <div class="col-sm-6 col-md-4 col-lg-3 no-padding">
                     <ul class="list-group">
@@ -62,19 +62,10 @@
         </div>
     </div>
 </div>
-
-    <form name="signUpReg">
-        Namn: <input type="text" name="name">
-        Email: <input type="email" name="email">
-    </form>
-
-    <button onclick="signUp()">Registrera dig till nyhetsbrevet!</button>
-
-    <button onclick="getNewsletter()">Hämta alla personer som vill ha nyhetsbrev</button>
  
-    <script type="text/javascript" src="./JS/categoryLogic.js"></script>
+<script type="text/javascript" src="./JS/newsletter.js"></script>
 <script>
-    getCategory();
+    getNewsletter();
 </script>
 <?php
     include "./includes/footer.php";

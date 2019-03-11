@@ -33,7 +33,7 @@ function showNewsletter(newsletter) {
     
     newsletter.forEach(newsletter => {
         var newsletterBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
-        newsletterBox.querySelector('.list-group-item').innerText = newsletter.Name;
-        newsletterContainer.appendChild(categoryBox); 
+        newsletterBox.querySelector('.list-group-item').innerText = newsletter.Name + ' ' + newsletter.Email;
+        newsletterContainer.appendChild(newsletterBox); 
     })
 }
