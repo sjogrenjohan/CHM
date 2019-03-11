@@ -106,10 +106,10 @@ input {
 <body class="text-center">
     <form class="form-signin class"  action="loginSystem/loginfunc.php" method="POST" >
   
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
+  <h1 class="h3 mb-3 font-weight-normal">CHM sign in</h1>
+ 
   <input type="text" id="inputEmail" class="form-control" name="username" placeholder="Username" required="" autofocus="">
-  <label for="inputPassword" class="sr-only">Password</label>
+  
   <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required="">
   <div class="checkbox mb-3">
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,13 +107,13 @@ input {
     <form class="form-signin class"  action="loginSystem/register.php" method="POST" >
   
   <h1 class="h3 mb-3 font-weight-normal">Register here </h1>
-  <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="text" id="inputEmail" class="form-control" name="user" placeholder="Username" required="" autofocus="">
-  <label for="inputPassword" class="sr-only">Password</label>
+
+  <input type="text" id="inputEmail" class="form-control" name="user" placeholder="Username" required="" autofocus="" >
+  
   <input type="email" id="inputPassword" class="form-control" name="email" placeholder="Email@" required="">
-  <label for="inputPassword" class="sr-only">Password</label>
+  
   <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required="">
-  <label for="inputPassword" class="sr-only">Password</label>
+  
   <input type="password" id="inputPassword" class="form-control" name="repetPassword" placeholder="RepeatPassword" required="">
   <div class="checkbox mb-3">
 
