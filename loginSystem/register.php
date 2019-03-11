@@ -27,7 +27,7 @@ if(mysqli_num_rows($resultOfDataBase))
          foreach ($dataOfUserName as $key) {
           
             
-                  if($userName == $key['UserName'] && $key['Email'] == $userEmail ) {
+                  if($userName == $key['UserName'] && $key['Email'] == $userEmail) {
                  
                      header("location: ../register.php?error=userAlreadyexist=".$userName."&mail=".$userEmail); 
                    exit(); 
@@ -72,8 +72,12 @@ else if ($userPassword !== $repeteUserPassword)
 } else 
 {
      $hasedPassowrd = password_hash($userPassword, PASSWORD_BCRYPT);
+
      if($insert = $db->query("INSERT INTO users (UserID,UserName,Email,Password,Role) VALUES ('{$userID}','{$userName}','{$userEmail}','{$hasedPassowrd}', '{$defultAdnimpostion}') ")) {
           echo $db->affected_rows;
+          session_start();
+          $_SESSION['loggedinCostumer'] = $userID;
+          header("location: ../index.php?");  
           exit();
      }
 }
