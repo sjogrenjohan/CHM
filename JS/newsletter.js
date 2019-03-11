@@ -25,10 +25,10 @@ function getNewsletter() {
     var customerNews = new FormData()
     customerNews.append("collectionType", "newsletter")
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", customerNews , (response) => {console.log(response)})
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", customerNews , (response) => {showNewsletter(response)})
 }
 
-/*function showCategory(categories) {
+function showNewsletter(newsletter) {
     var categoryContainer = document.getElementById("categoryContainer")
     
     categories.forEach(category => {
@@ -37,4 +37,4 @@ function getNewsletter() {
         categoryBox.querySelector('.card-text').innerText = category.Name;
         categoryContainer.appendChild(categoryBox); 
     })
-}*/
+}
