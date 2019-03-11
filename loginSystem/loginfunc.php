@@ -1,6 +1,5 @@
 <?php
 include '../DatabaseApi/db.php';
-
 // getting user information
 $userName = mysqli_real_escape_string($db, $_POST['username']);
 $password = mysqli_real_escape_string($db, $_POST['password']); 
@@ -27,19 +26,20 @@ elseif(mysqli_num_rows($resultOfDataBase))
                 if($user["Role"] == $defultAdnimpostion) {
                     session_start();
                     $_SESSION['loggedinCostumer'] = $user["UserID"];
-                    echo json_encode(true);
+                    header("location: ../index.php?");  
                     exit();
                 }
 
                 elseif ($user["Role"] !== $defultAdnimpostion) {
                     session_start();
                     $_SESSION["loggedinAdmin"] = $user["UserID"];
+                    header("location: ../admin.php?");  
                 }
 
             }
             else if($user["UserName"] !== $userName && !password_verify($password,$user["Password"] ))
             {
-                header("location: ../login.php?error=Wrong_User_Infromation"); 
+                header("location: ../login.php?error=Wrong_User_Infromation");  
                 exit();
             }
         }

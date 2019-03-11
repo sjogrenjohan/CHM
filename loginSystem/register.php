@@ -3,6 +3,7 @@
 error_reporting(0); 
 // include data base connection
 include '../DatabaseApi/db.php';
+
 // include a random user id generator
 include 'UserID.php';
 // get to make user info to re-write account username email 
@@ -17,7 +18,7 @@ $defultAdnimpostion = "not admin";
 
 
 // make a an array of the database informtaion Username && UserID
-$resultOfDataBase = $db->query("SELECT UserName FROM users");
+$resultOfDataBase = $db->query("SELECT UserName, Email FROM users");
 $dataOfUserName = [];
 
 if(mysqli_num_rows($resultOfDataBase)) 
@@ -26,14 +27,23 @@ if(mysqli_num_rows($resultOfDataBase))
          $dataOfUserName[] = $row;
          foreach ($dataOfUserName as $key) {
           
-              foreach ( $key as $value) {
             
-                  if($userName == $value) {
+                  if($userName == $key['UserName'] && $key['Email'] == $userEmail) {
                  
                      header("location: ../register.php?error=userAlreadyexist=".$userName."&mail=".$userEmail); 
                    exit(); 
                   } 
-              }
+                  else if($userName == $key['UserName'])
+                  {
+                    header("location: ../register.php?error=userAlreadyexist=&mail=".$userEmail); 
+                    exit();
+                  }
+                  else if($key['Email'] == $userEmail) 
+                  {
+                    header("location: ../register.php?error=userAlreadyexist=uid=".$userName); 
+                    exit();
+                  }
+              
          }
     }
 }
@@ -63,8 +73,12 @@ else if ($userPassword !== $repeteUserPassword)
 } else 
 {
      $hasedPassowrd = password_hash($userPassword, PASSWORD_BCRYPT);
+
      if($insert = $db->query("INSERT INTO users (UserID,UserName,Email,Password,Role) VALUES ('{$userID}','{$userName}','{$userEmail}','{$hasedPassowrd}', '{$defultAdnimpostion}') ")) {
           echo $db->affected_rows;
+          session_start();
+          $_SESSION['loggedinCostumer'] = $defultAdnimpostion;
+          header("location: ../index.php?");  
           exit();
      }
 }

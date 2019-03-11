@@ -7,7 +7,7 @@
       $randitem = array_rand($charArray);
       $userID .="". $charArray[$randitem];
   }
-  
+
   ?>
 
 
