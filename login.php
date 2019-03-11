@@ -7,17 +7,17 @@
     <title>CHM - Computer Hardware Market - When Quality Matters</title>
    <!--  <link rel="stylesheet" href="./CSS3/login.css"> -->
     <style>
-    * { margin:0; padding:0; }
-    html, body {;height:60%; width:60%; }
+* { margin:0; padding:0; }
+html, body {;height:60%; width:60%; }
 
-    canvas {
-        z-index: 1 !important;
-        height: 15%;  
-        width: 15%;
-        transform: scale(10);  
-        position:relative; 
-        top: 12em;
-        left:30em;
+canvas {
+    z-index: 1 !important;
+    height: 15%;  
+    width: 15%;
+    transform: scale(10);  
+    position:relative; 
+    top: 12em;
+    left:30em;
 }
     body {
     padding: 0;
