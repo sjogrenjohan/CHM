@@ -105,7 +105,7 @@ input {
 <body class="text-center">
     <form class="form-signin class"  action="loginSystem/register.php" method="POST" >
   
-  <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+  <h1 class="h3 mb-3 font-weight-normal">Register here </h1>
   <label for="inputEmail" class="sr-only">Email address</label>
   <input type="text" id="inputEmail" class="form-control" name="user" placeholder="Username" required="" autofocus="">
   <label for="inputPassword" class="sr-only">Password</label>
