@@ -62,7 +62,7 @@
                     $_POST["signUpName"],
                     $_POST["signUpEmail"]
                 );
-                echo json_encode($_POST["signUpName"]);
+                echo json_encode($newSignUp);
                 exit;
             }
 
