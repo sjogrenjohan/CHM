@@ -20,3 +20,21 @@ function signUp() {
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", newsletter, (response) => { console.log(response) })
 }
+
+function getnewsLetter() {
+    var customerNews = new FormData()
+    customerNews.append("collectionType", "newsletter")
+
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", customerNews , (response) => {showCategory(response)})
+}
+
+/*function showCategory(categories) {
+    var categoryContainer = document.getElementById("categoryContainer")
+    
+    categories.forEach(category => {
+        var categoryBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
+        categoryBox.querySelector('.card-img-top').src = "./categoryImages/" + category.CatImage;
+        categoryBox.querySelector('.card-text').innerText = category.Name;
+        categoryContainer.appendChild(categoryBox); 
+    })
+}*/

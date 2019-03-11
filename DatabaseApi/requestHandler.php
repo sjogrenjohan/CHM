@@ -66,6 +66,10 @@
                 exit;
             }
 
+            if($_POST["collectionType"] == "newsletter") {
+                $newsletter = new NewsLetter();
+            }
+
         } catch(PDOException $error) {
             http_response_code(500);
             echo json_encode($error->getMessage());
