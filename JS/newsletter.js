@@ -25,7 +25,7 @@ function getNewsletter() {
     var customerNews = new FormData()
     customerNews.append("collectionType", "newsletter")
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", customerNews , (response) => {showCategory(response)})
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", customerNews , (response) => {console.log(response)})
 }
 
 /*function showCategory(categories) {

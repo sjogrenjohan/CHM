@@ -17,7 +17,6 @@ function getProduct() {
     requestDataToPhp.append("collectionType", "products")
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
-
 }
 
 function addProductDB() {
