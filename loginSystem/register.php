@@ -17,7 +17,7 @@ $defultAdnimpostion = "not admin";
 
 
 // make a an array of the database informtaion Username && UserID
-$resultOfDataBase = $db->query("SELECT UserName FROM users");
+$resultOfDataBase = $db->query("SELECT UserName, Email FROM users");
 $dataOfUserName = [];
 
 if(mysqli_num_rows($resultOfDataBase)) 
@@ -26,14 +26,23 @@ if(mysqli_num_rows($resultOfDataBase))
          $dataOfUserName[] = $row;
          foreach ($dataOfUserName as $key) {
           
-              foreach ( $key as $value) {
             
-                  if($userName == $value) {
+                  if($userName == $key['UserName'] && $key['Email'] == $userEmail ) {
                  
                      header("location: ../register.php?error=userAlreadyexist=".$userName."&mail=".$userEmail); 
                    exit(); 
                   } 
-              }
+                  else if($userName == $key['UserName'])
+                  {
+                    header("location: ../register.php?error=userAlreadyexist=&mail=".$userEmail); 
+                    exit();
+                  }
+                  else if($key['Email'] == $userEmail) 
+                  {
+                    header("location: ../register.php?error=userAlreadyexist=uid=".$userName); 
+                    exit();
+                  }
+              
          }
     }
 }

@@ -39,7 +39,7 @@ elseif(mysqli_num_rows($resultOfDataBase))
             }
             else if($user["UserName"] !== $userName && !password_verify($password,$user["Password"] ))
             {
-                header("location: ../login.php?error=Wrong_User_Infromation"); 
+                header("location: ../login.php?error=Wrong_User_Infromation");  
                 exit();
             }
         }
