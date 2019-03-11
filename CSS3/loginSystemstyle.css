@@ -1,9 +1,25 @@
-body {
+/* desktop */
+@media only screen 
+and (min-device-width : 1080px) 
+and (max-device-width : 1920px) 
+ {
+   /* keep this in original login.php  */
+/*   * { margin:0; padding:0; }
+html, body {;height:60%; width:60%; } */
+canvas {
+    z-index: 1 !important;
+    height: 15%;  
+    width: 15%;
+    transform: scale(10);  
+    position:relative; 
+    top: 12em;
+    left:30em;
+}
+    body {
     padding: 0;
     margin: 0;
-    background-image: url(../images/beautiful-color-ui-gradients-backgrounds-virgin-america.png);
+   
     background-size: cover;
-    
 }
 
 #socailImage {
@@ -29,23 +45,29 @@ div {
 }
 
 form {
+    z-index: 2 !important;
     margin:0 !important;
     background-color: rgb(255, 255, 255);
     height: 80%;
-    width: 50%;
+    width: 40%;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 5px;
+    border-style: solid;
     position: relative;
     left: 50%;
-    bottom: 34%;
+    bottom: 04%;
 }
 
  
 .title {
+    z-index:3 !important;
     padding: 0 !important;
     margin: 0 !important;
-    font-size: 24px;
+    font-size: 30px;
     position: relative;
-    left: 14em;
-    bottom: 7em;
+    left: 13em;
+    top: 1em;
     width: 10em;
     color:black;
 
@@ -55,6 +77,7 @@ form {
     font-size: 12px;
     position: relative;
     left:4em;
+    top: 6em;
 }
 
 
@@ -66,8 +89,9 @@ form {
     border-radius: 5px;
     border-color: rgba(128, 128, 128, 0.537);
     position: relative;
-    top: 40%;
-    left: 12%;
+    top: 8em;
+    z-index: 2 !important;
+    left: 3.8em;
 }
 
 #password {
@@ -78,8 +102,8 @@ form {
     border-radius: 5px;
     border-color: rgba(128, 128, 128, 0.537);
     position: relative;
-    top: 40%;
-    left: 12%;
+    top: 9.2em;
+    left: 3.8em;
 }
 
 .loginButton {
@@ -94,26 +118,40 @@ form {
     border-radius: 5px;
     font-weight: bolder;
     position: relative;
-    top:  40%;
-    left: 18%;
+    top:  14em;
+    left: 5em;
     
 }
 
-.buttonText {
-    font-size: 20px;
-    position: relative;
-    bottom: 15px;
-  
-}
-
 .createAcount {
+    z-index: 4!important;
     margin: 0;
     padding: 0;
     color: gray;
     font-size: 12px;
     position: relative;
-    bottom: 20em;
-    left: 30em;
+    top: 33em;
+    left: 38.5em;
 }
 
+.CHM {
+    z-index: 4!important;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 15em;  
+    top:3em;
+}
+.Slogan 
+{
+    z-index: 4!important;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 17.3em;  
+    top: 5em; 
+}
 
+ }
+
+ 
