@@ -19,5 +19,17 @@
                 return array("Status:" => "Registrerad användare för nyhetsbrev.");
             } 
         }
+
+        public function getNewsletter() {
+            $query = $this->database->connection->prepare("SELECT * FROM newsletter_signup;");
+            $query->execute();
+            $result = $query->fetchAll();
+
+            if (empty($result)){
+                return array("error"=> "Finns ej några registrerade nyhetsbrevskunder");
+            }
+            return $result;
+
+        }
     }
 ?>

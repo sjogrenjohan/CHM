@@ -21,7 +21,7 @@ function signUp() {
     makeRequest("./DatabaseApi/requestHandler.php", "POST", newsletter, (response) => { console.log(response) })
 }
 
-function getnewsLetter() {
+function getNewsletter() {
     var customerNews = new FormData()
     customerNews.append("collectionType", "newsletter")
 
