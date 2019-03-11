@@ -5,184 +5,119 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CHM - Computer Hardware Market - When Quality Matters</title>
-   <!--  <link rel="stylesheet" href="./CSS3/login.css"> -->
-    <style>
-* { margin:0; padding:0; }
-html, body {;height:60%; width:60%; }
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-canvas {
-    z-index: 1 !important;
-    height: 15%;  
-    width: 15%;
-    transform: scale(10);  
-    position:relative; 
-    top: 12em;
-    left:30em;
-}
-    body {
-    padding: 0;
-    margin: 0;
-   
-    background-size: cover;
+   <style>
+.class {
+width: 20% !important;
+margin-top: 10%;
+position: relative;
+left: 40%;
 }
 
-#socailImage {
-    width: 11em;
-    height: 11em;
-    z-index: 10000;
+input {
+    margin-bottom: 5%;
+}
+/* desktop background */
+@media only screen 
+and (min-device-width : 1080px) 
+and (max-device-width : 1920px){
+       body{
+           background-image: url(./images/login.jpg);
+           background-size: cover;
+       }
+    }
+
+/* iphone se 5 */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+ {
+    
+    .class {
+    width: 60% !important;
+    margin-top: 10%;
     position: relative;
-    top: 7.5em;
-    left: 4em;
-}
-
-div {
-    background-color: rgb(255, 255, 255);
-    width: 48%;
-    height: 80%;
-    border-width: 6px;
-    border-style: solid;
-    border-radius: 5px;
-    border-color:rgb(255, 255, 255); 
-    position: absolute;
-    left: 25%;
-    top:10%
-}
-
-form {
-    z-index: 2 !important;
-    margin:0 !important;
-    background-color: rgb(255, 255, 255);
-    height: 80%;
-    width: 50%;
-    position: relative;
-    left: 50%;
-    bottom: 04%;
-}
-
- 
-.title {
-    z-index:3 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    font-size: 30px;
-    position: relative;
-    left: 13em;
-    top: 1em;
-    width: 10em;
-    color:black;
-
-}
-
-.information {
-    font-size: 12px;
-    position: relative;
-    left:4em;
-    top: 6em;
-}
-
-
-#username {
-    height: 2em;
-    width: 14em;
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: rgba(128, 128, 128, 0.537);
-    position: relative;
-    top: 8em;
-    z-index: 2 !important;
-    left: 12%;
-}
-
-#password {
-    height: 2em;
-    width: 14em;
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: rgba(128, 128, 128, 0.537);
-    position: relative;
-    top: 9.2em;
-    left: 12%;
-}
-
-.loginButton {
-    margin: 0;
-    padding: 0;
-    background-color: rgba(95, 94, 94, 0.8);
-    color: white;
-    width: 12em;
-    height: 2.5em;
-    border-color: rgba(95, 94, 94, 0.8);
-    border-width: 1px;
-    border-radius: 5px;
-    font-weight: bolder;
-    position: relative;
-    top:  14em;
-    right: 10em;
+    left: 20%;
     
 }
-
-.createAcount {
-    z-index: 4!important;
-    margin: 0;
-    padding: 0;
-    color: gray;
-    font-size: 12px;
-    position: relative;
-    top: 33em;
-    left: 38.5em;
+input {
+    margin-bottom: 7%;
+}
 }
 
-.CHM {
-    z-index: 4!important;
-    margin: 0;
-    padding: 0;
+/* iphone x */
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3) { 
+    
+.class {
+    width: 60% !important;
+    margin-top: 10%;
     position: relative;
-    left: 15em;  
-    top:3em;
+    left: 20%;
+    
 }
-.Slogan 
-{
-    z-index: 4!important;
-    margin: 0;
-    padding: 0;
+input {
+    margin-bottom: 7%;
+}
+}
+
+/* iphone pluses */
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) { 
+    .class {
+    width: 60% !important;
+    margin-top: 40%;
     position: relative;
-    left: 17.3em;  
-    top: 5em; 
+    left: 20%;
+    
 }
-    </style>
+input {
+    margin-bottom: 7%;
+}
+}
+
+/* ipad */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (-webkit-min-device-pixel-ratio: 1){ 
+    
+    .class {
+    width: 80% !important;
+    margin-top: 10% !important;
+    position: relative;
+    left: 10%;
+    
+}
+input {
+    margin-bottom: 7%;
+}
+}
+   </style>
+
 </head>
-<body>
-    
-    
+<body class="text-center">
+    <form class="form-signin class"  action="loginSystem/loginfunc.php" method="POST" >
+  
+  <h1 class="h3 mb-3 font-weight-normal">CHM sign in</h1>
+ 
+  <input type="text" id="inputEmail" class="form-control" name="username" placeholder="Username" required="" autofocus="">
+  
+  <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required="">
+  <div class="checkbox mb-3">
+
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <p class="mt-5 mb-3 text-muted"><a href="register.php">Create account here</a></p>
+</form>
 
 
-<div class="form_div_background">
-
-    
-    <h3 class="title">Sign in or sign up </h3>
-
-    <form action="./loginSystem/loginfunc.php" method="post">
-
-        <p class="information">In order to purchase products form <br> CHM you have to have an account. <br>
-        This is becuse we want our costumers<br>to the ablity to say what they think</p>
-
-           <input type="text" name="username" id="username" placeholder="Username">
-
-              <input type="password" name="password" id="password" placeholder="Password">
-
-                 <button type="submit" class="loginButton">Login</button>
-    </form>    
-    
-</div>
-
-<a href="register.php" class="createAcount">Create your account here</a>
-<h1 class="CHM">CHM</h1>
-<h2 class="Slogan">When Quality Matters</h2>
-<canvas></canvas> 
-
-
-    <script src="./JS/cube.js"></script>
 </body>
 </html>

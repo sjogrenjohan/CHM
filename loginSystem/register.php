@@ -14,6 +14,8 @@ $userPassword = mysqli_real_escape_string($db, $_POST['password']);
 $repeteUserPassword = mysqli_real_escape_string($db,$_POST['repetPassword']);
 $defultAdnimpostion = "not admin";
 
+
+
 // make a an array of the database informtaion Username && UserID
 $resultOfDataBase = $db->query("SELECT UserName FROM users");
 $dataOfUserName = [];
