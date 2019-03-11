@@ -2,6 +2,7 @@
 
     include "productHandler.php";
     include "categoryHandler.php";
+    include "newsLetterHandler.php";
     
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
@@ -52,6 +53,11 @@
                 $categoryHandler = new categoryHandler();
                 $databaseResult = $categoryHandler->getCategory();
                 echo json_encode($databaseResult);
+                exit;
+            }
+
+            if($_POST["collectionType"] == "contact") {
+                echo json_encode($_POST["registerName"]);
                 exit;
             }
 

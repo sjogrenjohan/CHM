@@ -23,7 +23,6 @@
             VALUES ('$pID', '$price', '$name', '$pDesc', '$stock', '$height', '$width', '$length', $weight)";
             $query = $this->database->connection->prepare($sql);
             $res = $query->execute();
-            
 
             if($res == false){
                 return array("error"=>"Går ej att lägga till produkt");
@@ -36,7 +35,6 @@
             $sql = "UPDATE `products` SET `UnitsInStock`= UnitsInStock + $updateUnit WHERE `ProductID`= $prodID";
             $query = $this->database->connection->prepare($sql);
             $res = $query->execute();
-
 
             if($res == false){
                 return array("error"=>"Går ej att uppdatera lagersaldo");
