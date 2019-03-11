@@ -8,8 +8,8 @@
         }
 
         // register newsletters
-        public function newsletterSignUp($ID, $name, $email) {
-            $sql = "INSERT INTO `newsletter_signup`(`ID`, `Name`, `Email`) VALUES ('$ID', '$name', '$email')";
+        public function newsletterSignUp($name, $email) {
+            $sql = "INSERT INTO `newsletter_signup`(`Name`, `Email`) VALUES ($name', '$email')";
             $query = $this->database->connection->prepare($sql);
             $res = $query->execute();
 

@@ -56,8 +56,13 @@
                 exit;
             }
 
-            if($_POST["collectionType"] == "contact") {
-                echo json_encode($_POST["registerName"]);
+            if($_POST["collectionType"] == "signUp") {
+                $newletter = new NewsLetter();
+                $newSignUp = $newletter->newsletterSignUp(
+                    $_POST["signUpName"],
+                    $_POST["signUpEmail"]
+                );
+                echo json_encode($_POST["signUpName"]);
                 exit;
             }
 

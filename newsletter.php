@@ -8,9 +8,9 @@
     <title>Document</title>
 </head>
 <body>
-    <form name="signUp">
-        <input type="text" name="name">
-        <input type="email" name="email">
+    <form name="signUpReg">
+        Namn: <input type="text" name="name">
+        Email: <input type="email" name="email">
     </form>
 
     <button onclick="signUp()">Registrera dig till nyhetsbrevet!</button>
