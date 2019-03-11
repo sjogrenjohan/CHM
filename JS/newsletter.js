@@ -29,12 +29,11 @@ function getNewsletter() {
 }
 
 function showNewsletter(newsletter) {
-    var categoryContainer = document.getElementById("categoryContainer")
+    var newsletterContainer = document.getElementById("newsletterContainer")
     
-    categories.forEach(category => {
-        var categoryBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
-        categoryBox.querySelector('.card-img-top').src = "./categoryImages/" + category.CatImage;
-        categoryBox.querySelector('.card-text').innerText = category.Name;
-        categoryContainer.appendChild(categoryBox); 
+    newsletter.forEach(newsletter => {
+        var newsletterBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
+        newsletterBox.querySelector('.list-group-item').innerText = newsletter.Name;
+        newsletterContainer.appendChild(categoryBox); 
     })
 }
