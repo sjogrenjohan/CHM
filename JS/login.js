@@ -1,5 +1,4 @@
  // check if user is logged in with fetch
-
  var checkForUSer = function() {
    fetch('./loginSystem/logincheck.php', {
         method: 'get',
@@ -10,11 +9,36 @@
             }
             throw new Error(response.statusText)
         })
-        .then(function(response) {
-
+        .then(function(response) {  
             if(response != "") {
                 localStorage.setItem('userType', JSON.stringify(response));
             }
         })
 }();
 
+function admin() {
+    $(document).ready(function(){
+        $('#adminButton').show();
+    });
+}
+function notadmin() {
+    $(document).ready(function(){
+        $('#adminButton').hide();
+    });  
+}
+
+
+
+
+var adminButton = function() {
+
+    var getUsertype = JSON.parse(localStorage.getItem('userType'));
+ console.log(getUsertype);
+    if(getUsertype == "admin") {
+        admin();
+    }
+    else{
+        notadmin();
+    }
+
+}();

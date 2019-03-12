@@ -25,15 +25,16 @@ elseif(mysqli_num_rows($resultOfDataBase))
 
                 if($user["Role"] == $defultAdnimpostion) {
                     session_start();
-                    $_SESSION['loggedinCostumer'] = $user["UserID"];
+                    $_SESSION['loggedinCostumer'] = $user["Role"];
                     header("location: ../index.php?");  
                     exit();
                 }
 
                 elseif ($user["Role"] !== $defultAdnimpostion) {
                     session_start();
-                    $_SESSION["loggedinAdmin"] = $user["UserID"];
+                    $_SESSION["loggedinAdmin"] = $user["Role"];
                     header("location: ../admin.php?");  
+                    exit();
                 }
 
             }
