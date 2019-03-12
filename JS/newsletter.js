@@ -13,6 +13,7 @@ function makeRequest(url, method, formdata, callback) {
 }
 
 function signUp() {
+    document.getElementsByClassName(".signedUp").innerText = "Välkommen";
     var newsletter = new FormData()
     newsletter.append("collectionType", "signUp")
     newsletter.append("signUpName", document.forms["signUpReg"]["name"].value)
