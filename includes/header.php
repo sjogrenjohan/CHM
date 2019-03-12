@@ -33,7 +33,7 @@
               <a class="nav-link" href="./login.php">Logga in
               <i class="cartStyle fas fa-user"></i></a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item active">           
               <a class="nav-link" href="cartPage.php"><i class="cartStyle fas fa-shopping-cart"></i></a>
             </li>
           </ul>
