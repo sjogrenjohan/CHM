@@ -24,7 +24,7 @@
             <a class="nav-link" href="./index.php">Startsida</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="./admin.php">Admin</a>
+            <a class="nav-link" href="./admin.php" id="adminButton">Admin</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
