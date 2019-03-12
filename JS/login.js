@@ -30,15 +30,18 @@ function notadmin() {
 
 
 
-var adminButton = function() {
+(function() {
 
     var getUsertype = JSON.parse(localStorage.getItem('userType'));
- console.log(getUsertype);
+    var getLogginButton = document.getElementById("LogInLogOut");
+   
+    
     if(getUsertype == "admin") {
+      
         admin();
     }
     else{
         notadmin();
     }
 
-}();
+})();

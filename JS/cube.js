@@ -60,10 +60,6 @@ function project(points3d, width, height) {
         }
     return points2d;
 }
-// delete for total working interaktive experience 
-var rotaionx = Math.random()* 0.05;
-var rotationy = Math.random()*0.05 ;
-
 
 function loop() {
 
@@ -78,8 +74,8 @@ function loop() {
         context.fillRect(0, 0, width, height);
         context.strokeStyle = "#ffffff";
 //  use pointer.x & pointer.y and set rotaiony & rotaionx to 0.01 or lower or higher 
-        cube.rotateY(/* -pointer.x * */ rotationy);
-        cube.rotateX(/* pointer.y * */ rotaionx);
+        cube.rotateY( -pointer.x *  0.001);
+        cube.rotateX( pointer.y *  0.001);
 
         context.fillStyle = "orange";
 
