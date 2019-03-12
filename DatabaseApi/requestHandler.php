@@ -73,6 +73,13 @@
                 exit;
             }
 
+            if($_POST["collectionType"] == "singleProduct") {
+                $product = new productHandler();
+                $product = $product->singleProduct();
+                echo json_encode($product);
+                exit;
+            }
+
         } catch(PDOException $error) {
             http_response_code(500);
             echo json_encode($error->getMessage());

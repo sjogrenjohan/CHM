@@ -12,6 +12,13 @@ function makeRequest(url, method, formdata, callback) {
     })
 }
 
+function singleProduct() {
+    var singleData = new FormData()
+    singleData.append("collectionType", "singleProduct")
+
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", singleData, (response) => { console.log(response) })
+}
+
 function getProduct() {
     var requestDataToPhp = new FormData()
     requestDataToPhp.append("collectionType", "products")
