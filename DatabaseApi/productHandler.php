@@ -55,13 +55,9 @@
             }
         }
 
-        public function singleProduct() {
-            $sql =
+        public function singleProduct($CatID) {
+            $sql = "SELECT * FROM products JOIN category_relations ON products.ProductID = category_relations.ProductID WHERE category_relations.CategoryID = `P1`";
         }
 
     }
-
-
-    
-
 ?>

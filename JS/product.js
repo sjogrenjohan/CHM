@@ -12,7 +12,7 @@ function makeRequest(url, method, formdata, callback) {
     })
 }
 
-function singleProduct() {
+function singleProd() {
     var singleData = new FormData()
     singleData.append("collectionType", "singleProduct")
 

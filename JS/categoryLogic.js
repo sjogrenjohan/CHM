@@ -27,7 +27,14 @@ function showCategory(categories) {
         var categoryBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
         categoryBox.querySelector('.card-img-top').src = "./categoryImages/" + category.CatImage;
         categoryBox.querySelector('.card-text').innerText = category.Name;
+        
         categoryContainer.appendChild(categoryBox); 
     })
 }
-  
+
+function categoryProduct(categories) {
+    /*var productContainer = document.getElementById("productContainer")*/
+
+    var categoryID = categories.category = categoryID;
+    console.log("categoryID");
+}
