@@ -24,16 +24,16 @@
             <a class="nav-link" href="./index.php">Startsida</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="./admin.php">Admin</a>
+            <a class="nav-link" href="./admin.php" id="adminButton">Admin</a>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="./login.php">Logga in
+              <a class="nav-link" href="./login.php"> <span id="LogInLogOut">Logga in</span>
               <i class="cartStyle fas fa-user"></i></a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item active">           
               <a class="nav-link" href="cartPage.php"><i class="cartStyle fas fa-shopping-cart"></i></a>
             </li>
           </ul>

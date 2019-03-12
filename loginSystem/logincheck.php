@@ -1,12 +1,14 @@
 <?php
 session_start();
 
-if($_SESSION['loggedinCostumer']) {
-    echo $_SESSION['loggedinCostumer'];
+if( isset($_SESSION['loggedinCostumer'])) {
+    $notAdmin = $_SESSION['loggedinCostumer'];
+    echo $notAdmin;
     exit();
 }
-elseif ($_SESSION["loggedinAdmin"]) {
-    echo $_SESSION["loggedinAdmin"];
-}   exit();
-
+elseif (isset($_SESSION["loggedinAdmin"])) {
+    $admin = $_SESSION["loggedinAdmin"];
+    echo $admin;
+    exit();
+}
 ?> 
