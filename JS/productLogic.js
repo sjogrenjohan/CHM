@@ -13,11 +13,18 @@ function makeRequest(url, method, formdata, callback) {
     })
 }
 
+function getProductsInCategory(catID) {
+    var ProdInCat = new FormData();
+    ProdInCat.append("collectionType", "ProdInCat");
+    ProdInCat.append("categoryID", catID);
+
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", ProdInCat, (response) => { showProduct(response) });
+}
+
 function getProduct(numberOfProducts) {
     numberOfProductsToRender = numberOfProducts
     var requestDataToPhp = new FormData()
     requestDataToPhp.append("collectionType", "products")
-    requestDataToPhp.append("action", "delete")
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => {showProduct(response)})
 }
@@ -30,7 +37,7 @@ function showProduct(products) {
         if(productCount == numberOfProductsToRender) {
             return
         }
-        console.log(product.ImageURL)
+    
         var productBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
         productBox.querySelector('.card-img-top').src = "./productImages/" + product.ImageURL;
         productBox.querySelector('.card-title').innerText = product.Name;
@@ -39,5 +46,4 @@ function showProduct(products) {
         productContainer.appendChild(productBox); 
         productCount++
     })
-    
-  }
+}

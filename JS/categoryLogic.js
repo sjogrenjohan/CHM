@@ -15,26 +15,21 @@ function makeRequest(url, method, formdata, callback) {
 function getCategory() {
     var requestDataToPhp = new FormData()
     requestDataToPhp.append("collectionType", "categories")
-    requestDataToPhp.append("action", "delete")
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => {showCategory(response)})
 }
 
 function showCategory(categories) {
     var categoryContainer = document.getElementById("categoryContainer")
-    
+        
     categories.forEach(category => {
+        var categoryID = category.CategoryID;
         var categoryBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
         categoryBox.querySelector('.card-img-top').src = "./categoryImages/" + category.CatImage;
         categoryBox.querySelector('.card-text').innerText = category.Name;
+        categoryBox.querySelector('.nav-link').href = "./productPage.php?value=" + categoryID;
+
         
         categoryContainer.appendChild(categoryBox); 
     })
-}
-
-function categoryProduct(categories) {
-    /*var productContainer = document.getElementById("productContainer")*/
-
-    var categoryID = categories.category = categoryID;
-    console.log("categoryID");
 }

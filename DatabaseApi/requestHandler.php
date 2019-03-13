@@ -73,9 +73,11 @@
                 exit;
             }
 
-            if($_POST["collectionType"] == "singleProduct") {
+            if($_POST["collectionType"] == "ProdInCat") {
                 $product = new productHandler();
-                $product = $product->singleProduct();
+                $product = $product->getProductsInCategory(
+                    $_POST["categoryID"]
+                );
                 echo json_encode($product);
                 exit;
             }
