@@ -74,12 +74,7 @@
                 exit;
             }
 
-            /* if($_POST["collectionType"] == "singleProduct") {
-                $product = new productHandler();
-                $product = $product->singleProduct();
-                echo json_encode($product);
-                exit;
-            } */
+        
             if($_POST["collectionType"] == "addToCart") {
                 $cart = new CartHandler();
                 $cart->addToCart($_POST["productId"]);

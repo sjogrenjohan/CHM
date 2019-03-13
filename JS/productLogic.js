@@ -36,6 +36,7 @@ function showProduct(products) {
         productBox.querySelector('.card-title').innerText = product.Name;
         productBox.querySelector('.card-text').innerText = product.UnitPrice + ":-";
         productBox.querySelector('.two').innerText = product.UnitsInStock + " st i lager";
+        productBox.querySelector("button").setAttribute("data-productId", product.ProductID);
         productContainer.appendChild(productBox); 
         productCount++
     })
