@@ -4,8 +4,6 @@ error_reporting(0);
 // include data base connection
 include '../DatabaseApi/db.php';
 
-// include a random user id generator
-include 'UserID.php';
 // get to make user info to re-write account username email 
 include 'errorHandler.php';
 // getting account from register for user
@@ -74,7 +72,7 @@ else if ($userPassword !== $repeteUserPassword)
 {
      $hasedPassowrd = password_hash($userPassword, PASSWORD_BCRYPT);
 
-     if($insert = $db->query("INSERT INTO users (UserID,UserName,Email,Password,Role) VALUES ('{$userID}','{$userName}','{$userEmail}','{$hasedPassowrd}', '{$defultAdnimpostion}') ")) {
+     if($insert = $db->query("INSERT INTO users (UserName,Email,Password,Role) VALUES ('{$userName}','{$userEmail}','{$hasedPassowrd}', '{$defultAdnimpostion}') ")) {
           echo $db->affected_rows;
           session_start();
           $_SESSION['loggedinCostumer'] = $defultAdnimpostion;

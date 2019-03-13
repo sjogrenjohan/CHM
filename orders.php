@@ -1,5 +1,11 @@
+<?php
+include './DatabaseApi/orderListHandler.php';
 
+$orders = new OrderListHandler();
 
-<?php 
+$list = $orders->getOrderList(); 
+
+echo json_encode($list);
+    
 
 ?>
