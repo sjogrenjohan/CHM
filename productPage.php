@@ -23,6 +23,13 @@
     </div>
 </div>
 
+
+<script type="text/javascript" src="./JS/productLogic.js"></script>
+<script>
+    var catID = "<?php echo $_GET['value']; ?>";
+    getProductsInCategory(catID);
+</script>
+
 <?php
     include "./includes/footer.php";
     include "./includes/html-end.php";
