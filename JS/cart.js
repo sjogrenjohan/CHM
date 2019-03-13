@@ -23,10 +23,10 @@ function showCart(products) {
     
     products.forEach(product => {
         var cartBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
-        cartBox.querySelector('.image').src = "./productImages/" + product.ImageURL;
         cartBox.querySelector('.name').innerText = product.Name;
         cartBox.querySelector('.quantity').innerText = product.nrOfItems + " st";
-        cartBox.querySelector('.price').innerText = product.UnitPrice + " :-";
+        cartBox.querySelector('.price').innerText = product.UnitPrice;
+        cartBox.querySelector('.totalPrice').innerText = product.UnitPrice;
         cartContainer.appendChild(cartBox); 
     })
 }
