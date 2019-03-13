@@ -49,8 +49,9 @@
             }
         }
 
-        public function removeItemFromCart() {
-
+        public function removeAllItemsFromCart() {
+            unset($_SESSION['cart']);
+            return true;
         }
 
         private function initSession() {

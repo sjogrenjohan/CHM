@@ -12,7 +12,6 @@ function makeRequest(url, method, formdata, callback) {
 }
 
 function getCartItems() {
-    console.log("hello")
     var cartData = new FormData()
     cartData.append("collectionType", "getCartItems")
     
@@ -20,8 +19,6 @@ function getCartItems() {
 }
 
 function showCart(products) {
-    console.log(products)
-
     var cartContainer = document.getElementById("cartContainer")
     
     products.forEach(product => {
@@ -35,7 +32,6 @@ function showCart(products) {
 }
 
 function addToCart(button) {
-    console.log("product", button.getAttribute("data-productId"))
     var cartData = new FormData()
     cartData.append("collectionType", "addToCart")
     cartData.append("productId", button.getAttribute("data-productId"))
@@ -46,5 +42,12 @@ function addToCart(button) {
 }
 
 function emptyCart() {
+    var cartData = new FormData()
+    cartData.append("collectionType", "deleteCartItems")
 
+    location.reload(true);
+    
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", cartData , (response) => {
+        console.log(response)
+    })
 }
