@@ -51,3 +51,7 @@ function emptyCart() {
         console.log(response)
     })
 }
+
+function confirmBuy() {
+    console.log("beep this");
+}
