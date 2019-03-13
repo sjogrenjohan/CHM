@@ -7,7 +7,7 @@
             $this->database = new Database();
         }
 
-        // Get all students
+        
         public function getCategory() {
             $query = $this->database->connection->prepare("SELECT * FROM categories;");
             $query->execute();
