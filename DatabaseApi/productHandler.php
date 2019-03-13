@@ -55,8 +55,20 @@
             }
         }
 
-        public function singleProduct($CatID) {
-            $sql = "SELECT * FROM products JOIN category_relations ON products.ProductID = category_relations.ProductID WHERE category_relations.CategoryID = `P1`";
+        public function getProductsInCategory($catID) {
+            //$sql = "SELECT products.* FROM products JOIN `category_relations` ON products.ProductID = `category_relations`.ProductID WHERE `category_relations`.CategoryID = `G1`";
+            $sql = "SELECT products.* FROM products
+            JOIN category_relations ON products.ProductID = category_relations.ProductID
+            WHERE category_relations.CategoryID = '$catID'";
+
+            $query = $this->database->connection->prepare($sql);
+            $query->execute();
+            $res = $query->fetchAll();
+
+            if (empty($res)){
+                return array("error"=> "Hopp, produkten du ville åt finns inte");
+            }
+            return $res;
         }
 
     }
