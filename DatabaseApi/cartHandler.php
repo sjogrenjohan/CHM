@@ -9,22 +9,34 @@
         }
 
         public function getCartItems() {
-            $inBlock = $this->convertSessionCartToSQLInBlock();
-
+            $cart = $_SESSION["cart"];
+            $inBlock = $this->convertSessionCartToSQLInBlock($cart);
             $query = $this->database->connection->prepare("SELECT * FROM products WHERE ProductID IN $inBlock;");
             $query->execute();
             $result = $query->fetchAll();
 
-    
             if (empty($result)){
                 return array("error"=> "Din kundvagn är tom");
+            }
+            foreach ($result as $itemKey => $item) {
+                foreach ($cart as $itemId => $nrOfItems) {
+                    if ($item["ProductID"] == $itemId) {
+                        $result[$itemKey]["nrOfItems"] = $nrOfItems;
+                    }
+                }
             }
             return $result;
         }
 
-        private function convertSessionCartToSQLInBlock() {
-            $_SESSION["cart"];
-            return "(1, 2)";
+        private function convertSessionCartToSQLInBlock($cart) {
+            $productIds = '(';
+            foreach ($cart as $key => $value) {
+                $productIds .= $key . ",";
+            }
+            $productIds = rtrim($productIds, ",");
+            $productIds .= ")";
+
+            return $productIds;
         }
         
         public function addToCart($product) {
@@ -35,7 +47,11 @@
             } else {
                 $_SESSION["cart"][$product] = 1;
             }
+        }
 
+        public function removeAllItemsFromCart() {
+            unset($_SESSION['cart']);
+            return true;
         }
 
         private function initSession() {

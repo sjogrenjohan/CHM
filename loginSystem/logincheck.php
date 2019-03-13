@@ -11,4 +11,5 @@ elseif (isset($_SESSION["loggedinAdmin"])) {
     echo $admin;
     exit();
 }
-?> 
+
+?>

@@ -12,7 +12,6 @@ function makeRequest(url, method, formdata, callback) {
 }
 
 function getCartItems() {
-    console.log("hello")
     var cartData = new FormData()
     cartData.append("collectionType", "getCartItems")
     
@@ -20,33 +19,33 @@ function getCartItems() {
 }
 
 function showCart(products) {
-    console.log(products)
-
-   /*  var productContainer = document.getElementById("productContainer")
-    var productCount = 0;
+    var cartContainer = document.getElementById("cartContainer")
     
     products.forEach(product => {
-        if(productCount == numberOfProductsToRender) {
-            return
-        }
-        console.log(product.ImageURL)
-        var productBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
-        //productBox.querySelector('.card-img-top').src = "./productImages/" + product.ImageURL;
-        productBox.querySelector('.name').innerText = product.Name;
-        productBox.querySelector('.quantity').innerText = product.UnitPrice + "st.";
-        productBox.querySelector('.price').innerText = product.UnitsInStock + ":-";
-        productBox.querySelector('.remove').innerText = product.UnitsInStock + "Ta bort";
-        productContainer.appendChild(productBox); 
-        productCount++
+        var cartBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
+        cartBox.querySelector('.name').innerText = product.Name;
+        cartBox.querySelector('.quantity').innerText = product.nrOfItems + " st";
+        cartBox.querySelector('.price').innerText = product.UnitPrice;
+        cartBox.querySelector('.totalPrice').innerText = product.UnitPrice;
+        cartContainer.appendChild(cartBox); 
     })
-     */
 }
 
 function addToCart(button) {
-    console.log("product", button.getAttribute("data-productId"))
     var cartData = new FormData()
     cartData.append("collectionType", "addToCart")
     cartData.append("productId", button.getAttribute("data-productId"))
+    
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", cartData , (response) => {
+        console.log(response)
+    })
+}
+
+function emptyCart() {
+    var cartData = new FormData()
+    cartData.append("collectionType", "deleteCartItems")
+
+    location.reload(true);
     
     makeRequest("./DatabaseApi/requestHandler.php", "POST", cartData , (response) => {
         console.log(response)

@@ -5,7 +5,7 @@ $userName = mysqli_real_escape_string($db, $_POST['username']);
 $password = mysqli_real_escape_string($db, $_POST['password']); 
 
 // grab information form database 
-$resultOfDataBase = $db->query("SELECT UserID,UserName,Password,Role FROM users");
+$resultOfDataBase = $db->query("SELECT UserName,Password,Role,Email FROM users");
 // make an empty array to sen information into
 $UserDataBaseResult = [];
 $defultAdnimpostion = "not admin";
@@ -26,6 +26,8 @@ elseif(mysqli_num_rows($resultOfDataBase))
                 if($user["Role"] == $defultAdnimpostion) {
                     session_start();
                     $_SESSION['loggedinCostumer'] = $user["Role"];
+                    $_SESSION["name"] = $user["UserName"];
+                    $_SESSION["Email"] = $user["Email"];
                     header("location: ../index.php?");  
                     exit();
                 }
@@ -33,6 +35,8 @@ elseif(mysqli_num_rows($resultOfDataBase))
                 elseif ($user["Role"] !== $defultAdnimpostion) {
                     session_start();
                     $_SESSION["loggedinAdmin"] = $user["Role"];
+                    $_SESSION["name"] = $user["UserName"];
+                    $_SESSION["Email"] = $user["Email"];
                     header("location: ../admin.php?");  
                     exit();
                 }

@@ -90,13 +90,19 @@
                 echo json_encode(true);
                 exit;
             }
-
+            
             if($_POST["collectionType"] == "getCartItems") {
                 $cart = new CartHandler();
                 $cartItems = $cart->getCartItems();
                 
                 echo json_encode($cartItems);
                 exit;
+            }
+            
+            if($_POST["collectionType"] == "deleteCartItems") {
+                $cart = new CartHandler();
+                $result = $cart->removeAllItemsFromCart();
+                echo json_encode($result);
             }
 
         }catch(PDOException $error) {
