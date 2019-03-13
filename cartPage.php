@@ -11,23 +11,35 @@ include "./includes/header.php";
             <table class="table table-striped">
                 <thead>
                     <tr>
+                        <th scope="col"></th>
                         <th scope="col">Namn</th>
                         <th scope="col">Antal</th>
                         <th scope="col">Pris</th>
                         <th scope="col">Ta bort vara</th>
                     </tr>
                 </thead>
-                <tbody id="newsletterContainer">
+                <tbody id="cartContainer">
                     <template>
                         <tr>
+                            <td class="image"></td>
                             <td class="name"></td>
                             <td class="quantity"></td>
                             <td class="price"></td>
-                            <td class="remove"></td>
+                            <td class="remove"><img onClick="removeItem()" src="./Images/trashcan2.png" style="width: 1.5em; height: 1.5em;"></td>
                         </tr>
                     </template>
                 </tbody>
             </table>
+        </div>
+        <div class="row">
+            <div class="col-6 col-md-4">
+            </div>
+            <div class="col-6 col-md-4" style="display: flex; justify-content: center;">            
+                <button type="button" class="btn btn-outline-danger" onclick="confirmBuy()">Slutför köp</button>
+            </div>
+            <div class="col-6 col-md-4" style="display: flex; justify-content: flex-end;">
+                <p>Totalt pris</p>
+            </div>
         </div>
     </div>
 </div>
