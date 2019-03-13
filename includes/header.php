@@ -1,3 +1,4 @@
+<script src="../JS/login.js"></script>
 <header>
     <div class="container-fluid position-relative">
         <div class="row">
@@ -24,14 +25,29 @@
             <a class="nav-link" href="./index.php">Startsida</a>
           </li>
           <li class="nav-item active">
+          <?php session_start(); if( isset($_SESSION['loggedinCostumer']) || isset($_SESSION["loggedinAdmin"])) : ?>
             <a class="nav-link" href="./admin.php" id="adminButton">Admin</a>
+            <?php else : ?>
+           
+            <?php endif ; ?>
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="./login.php"> <span id="LogInLogOut">Logga in</span>
-              <i class="cartStyle fas fa-user"></i></a>
+
+            <?php  if( isset($_SESSION['loggedinCostumer']) || isset($_SESSION["loggedinAdmin"])) : ?>
+              <a class="nav-link" href="index.php" >
+                <i class="cartStyle fas fa-user"></i>
+                <span id="LogInLogOut"  onclick="jagGerUpp();">Logga ut</span>
+              </a>
+              <?php else : ?>
+              <a class="nav-link" href="./login.php">
+                <span id="LogInLogOut">Logga in</span>
+                <i class="cartStyle fas fa-user"></i>
+              </a>
+              <?php endif ; ?>
+
             </li>
             <li class="nav-item active">           
               <a class="nav-link" href="cartPage.php"><i class="cartStyle fas fa-shopping-cart"></i></a>
