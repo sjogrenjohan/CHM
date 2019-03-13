@@ -1,4 +1,3 @@
-<script src="../JS/login.js"></script>
 <header>
     <div class="container-fluid position-relative">
         <div class="row">

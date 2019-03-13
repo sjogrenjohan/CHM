@@ -17,7 +17,7 @@ fetch('./orders.php', {
 
 function makeLIstOfOrders(data) {
     var newsletterContainer = document.getElementById("orderList");
-    console.log(data);
+  
     data.forEach(data => {
         var newsletterBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
    
