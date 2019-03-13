@@ -80,6 +80,7 @@
                     $_POST["categoryID"]
                 );
                 echo json_encode($product);
+                exit;
             }    
         
             if($_POST["collectionType"] == "addToCart") {
