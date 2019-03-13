@@ -3,7 +3,8 @@
     include "productHandler.php";
     include "categoryHandler.php";
     include "newsLetterHandler.php";
-    
+    include "cartHandler.php";
+
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             if($_POST["collectionType"] == "products") {
@@ -73,10 +74,28 @@
                 exit;
             }
 
-            if($_POST["collectionType"] == "singleProduct") {
+            /* if($_POST["collectionType"] == "singleProduct") {
                 $product = new productHandler();
                 $product = $product->singleProduct();
                 echo json_encode($product);
+                exit;
+            } */
+            if($_POST["collectionType"] == "addToCart") {
+                $cart = new CartHandler();
+                $cart->addToCart($_POST["productId"]);
+                
+                echo json_encode(true);
+            
+                exit;
+            }
+            if($_POST["collectionType"] == "getCartItems") {
+                $cart = new CartHandler();
+                $cartItems = $cart->getCartItems();
+                
+
+                
+                echo json_encode($cartItems);
+            
                 exit;
             }
 
