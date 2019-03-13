@@ -3,7 +3,8 @@
     include "productHandler.php";
     include "categoryHandler.php";
     include "newsLetterHandler.php";
-    
+    include "cartHandler.php";
+
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             if($_POST["collectionType"] == "products") {
@@ -79,16 +80,31 @@
                     $_POST["categoryID"]
                 );
                 echo json_encode($product);
+            }    
+        
+            if($_POST["collectionType"] == "addToCart") {
+                $cart = new CartHandler();
+                $cart->addToCart($_POST["productId"]);
+                
+                echo json_encode(true);
                 exit;
             }
 
-        } catch(PDOException $error) {
+            if($_POST["collectionType"] == "getCartItems") {
+                $cart = new CartHandler();
+                $cartItems = $cart->getCartItems();
+                
+                echo json_encode($cartItems);
+                exit;
+            }
+
+        }catch(PDOException $error) {
             http_response_code(500);
             echo json_encode($error->getMessage());
         }
 
     } else {
         echo json_encode("Not a POST request.");
-    }
+    };
 
 ?>
