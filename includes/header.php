@@ -24,7 +24,7 @@
             <a class="nav-link" href="./index.php">Startsida</a>
           </li>
           <li class="nav-item active">
-          <?php session_start(); if( isset($_SESSION['loggedinCostumer']) || isset($_SESSION["loggedinAdmin"])) : ?>
+          <?php session_start(); if(isset($_SESSION["loggedinAdmin"])) : ?>
             <a class="nav-link" href="./admin.php" id="adminButton">Admin</a>
             <?php else : ?>
            

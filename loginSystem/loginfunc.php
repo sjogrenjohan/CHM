@@ -26,8 +26,8 @@ elseif(mysqli_num_rows($resultOfDataBase))
                 if($user["Role"] == $defultAdnimpostion) {
                     session_start();
                     $_SESSION['loggedinCostumer'] = $user["Role"];
-                    $_SESSION['UserName'] = $user['UserName'];
-                    $_SESSION['Email'] = $user['Email'];
+                    $_SESSION["name"] = $user["UserName"];
+                    $_SESSION["Email"] = $user["Email"];
                     header("location: ../index.php?");  
                     exit();
                 }
@@ -35,8 +35,8 @@ elseif(mysqli_num_rows($resultOfDataBase))
                 elseif ($user["Role"] !== $defultAdnimpostion) {
                     session_start();
                     $_SESSION["loggedinAdmin"] = $user["Role"];
-                    $_SESSION['UserName'] = $user['UserName'];
-                    $_SESSION['Email'] = $user['Email'];
+                    $_SESSION["name"] = $user["UserName"];
+                    $_SESSION["Email"] = $user["Email"];
                     header("location: ../admin.php?");  
                     exit();
                 }
