@@ -8,7 +8,7 @@ class OrderListHandler {
     }
 
     public function getOrderList() {
-        $query = $this->database->connection->prepare("SELECT  * FROM users;");
+        $query = $this->database->connection->prepare("SELECT  * FROM orders;");
         $query->execute();
         $result = $query->fetchAll();
 
