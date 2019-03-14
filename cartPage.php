@@ -60,10 +60,6 @@ include "./includes/header.php";
                 <input type="text" name="name" class="form-control" id="recipient-name">
             </div>
             <div class="form-group">
-                <label for="message-text" class="col-form-label">Email:</label>
-                <input type="text" name="email" class="form-control" id="recipient-Email">
-            </div>
-            <div class="form-group">
                 <label for="message-text" class="col-form-label">Adress:</label>
                 <input type="text" name="adress" class="form-control" id="recipient-name">
             </div>
@@ -87,7 +83,7 @@ include "./includes/header.php";
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-dark" data-dismiss="modal">Ångra</button>
-        <button type="button" class="btn btn-dark">Bekräfta</button>
+        <button type="button" class="btn btn-dark" onclick="confirmOrder()">Bekräfta</button>
       </div>
     </div>
   </div>

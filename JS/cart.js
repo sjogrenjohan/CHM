@@ -11,6 +11,18 @@ function makeRequest(url, method, formdata, callback) {
     })
 }
 
+function confirmOrder() {
+    console.log("beep this!");
+    var orderInfo = new FormData();
+    orderInfo.append("collectionType", "confirmOrder")
+    orderInfo.append("orderName", document.forms["confirmPayment"]["name"].value)
+    orderInfo.append("orderAdress", document.forms["confirmPayment"]["adress"].value)
+    orderInfo.append("orderProducts", getCartItems())
+    
+
+    
+}
+
 function getCartItems() {
     var cartData = new FormData()
     cartData.append("collectionType", "getCartItems")
@@ -63,6 +75,3 @@ function removeItemFromCart() {
     })
 }
 
-function confirmBuy() {
-    console.log("beep this");
-}
