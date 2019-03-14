@@ -12,7 +12,7 @@ class Database {
         try {
             $this->connection = new PDO($dsn, $user, $password, NULL);
             //$this->connection->exec('set names utf8');
-        } catch (PDOException $e) {
+        } catch (Exception $e) {
             throw $e;
         }
     } 

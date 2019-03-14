@@ -40,7 +40,7 @@ function saveImage($file) {
             // if everything is ok, try to upload file
         } else {
             if (move_uploaded_file($file["tmp_name"], $target_file)) {
-                return basename($file["name"]);
+                return basename($file["name"])  ;
             } else {
                 return "Sorry, there was an error uploading your file.";
             }  

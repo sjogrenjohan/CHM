@@ -4,6 +4,7 @@
     include "categoryHandler.php";
     include "newsLetterHandler.php";
     include "cartHandler.php";
+    include "uploadImage.php";
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
@@ -16,6 +17,9 @@
 
             if($_POST["collectionType"] == "addProduct") {
                 $productHandler = new ProductHandler();
+
+                $savedImageName = saveImage($_FILES["formProductImage"]);
+
                 $resultat = $productHandler->insertProduct(
                     $_POST["formProductID"], 
                     $_POST["formProductName"], 
@@ -25,7 +29,8 @@
                     $_POST["formProductHeight"], 
                     $_POST["formProductWidth"], 
                     $_POST["formProductLength"], 
-                    $_POST["formProductWeight"]
+                    $_POST["formProductWeight"],
+                    $savedImageName
                 );
                 echo json_encode($resultat);
                 exit;
@@ -111,7 +116,7 @@
                 echo json_encode($result);
             }
 
-        }catch(PDOException $error) {
+        }catch(Exception $error) {
             http_response_code(500);
             echo json_encode($error->getMessage());
         }
