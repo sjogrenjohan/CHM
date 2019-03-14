@@ -11,6 +11,9 @@ function makeRequest(url, method, formdata, callback) {
     })
 }
 
+
+
+
 function getCartItems() {
     var cartData = new FormData()
     cartData.append("collectionType", "getCartItems")
@@ -19,16 +22,21 @@ function getCartItems() {
 }
 
 function showCart(products) {
-    var cartContainer = document.getElementById("cartContainer")
-    
+    var cartContainer = document.getElementById("cartContainer");
+    var totalpriceHolder = document.getElementById("totalpriceforCart");
+    var totalPriceWholeCart = 0;
+ 
     products.forEach(product => {
         var cartBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
         cartBox.querySelector('.name').innerText = product.Name;
         cartBox.querySelector('.quantity').innerText = product.nrOfItems + " st";
-        cartBox.querySelector('.price').innerText = product.UnitPrice;
-        cartBox.querySelector('.totalPrice').innerText = product.UnitPrice;
+        cartBox.querySelector('.price').innerText =  product.UnitPrice;
+        cartBox.querySelector('.totalPrice').innerText = product.UnitPrice * product.nrOfItems;
         cartContainer.appendChild(cartBox); 
+        totalPriceWholeCart += product.UnitPrice * product.nrOfItems;
     })
+    totalpriceHolder.innerHTML = totalPriceWholeCart;
+
 }
 
 function addToCart(button) {
