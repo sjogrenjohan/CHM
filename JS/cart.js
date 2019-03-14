@@ -13,14 +13,21 @@ function makeRequest(url, method, formdata, callback) {
 
 function confirmOrder() {
     console.log("beep this!");
+    var todaysDate = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+    
     var orderInfo = new FormData();
     orderInfo.append("collectionType", "confirmOrder")
     orderInfo.append("orderName", document.forms["confirmPayment"]["name"].value)
     orderInfo.append("orderAdress", document.forms["confirmPayment"]["adress"].value)
     orderInfo.append("orderProducts", getCartItems())
-    
+    orderInfo.append("orderDate", todaysDate)
+}
 
-    
+function getShippingInfo() {
+    var shippingInfo = new FormData();
+    shippingInfo.append("collectionType", "shippingInfo")
+
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", shippingInfo, (response) => {showCart(response)})
 }
 
 function getCartItems() {
