@@ -9,20 +9,20 @@
                 <thead>
                     <tr>
                         <th scope="col">OrderID</th>
-                        <th scope="col">CustomerID</th>
-                        <th scope="col">OrderDET_ID</th>
-                        <th scope="col">Order-status</th>
-                        <th scope="col">Date-added</th>
-                        <th scope="col">Total-Cost</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Adress</th>
+                        <th scope="col">Products</th>
+                        <th scope="col">Date added</th>
+                        <th scope="col">Total Cost</th>
                     </tr>
                 </thead>
                 <tbody id="orderList">
                     <template>
                         <tr>
                             <td class="OrderID"></td>
-                            <td class="CustomerID"></td>
-                            <td class="OrderDET_ID"></td>
-                            <td class="Order-status"></td>
+                            <td class="Name"></td>
+                            <td class="Adress"></td>
+                            <td class="Products"></td>
                             <td class="Date-added"></td>
                             <td class="Total-Cost"></td>
                         </tr>

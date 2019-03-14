@@ -21,11 +21,11 @@ $(document).ready(function(){
 
 
     function admin() {    
-            $('#adminButton').show();        
+        $('#adminButton').show();        
     }
 
     function notadmin() {      
-            $('#adminButton').hide();      
+        $('#adminButton').hide();      
     }
 
 
@@ -54,16 +54,16 @@ function jagGerUpp() {
 
     fetch('./loginSystem/logOut.php', {
         method: 'post',
-    }).then(function(X) {
+    })
+    .then(function(X) {
         if (X.status >= 200 && X.status < 300) {
             return X.text()
         }
         throw new Error(X.statusText)
     })
-    .then(function(X) {  
-        
-        
-    }).catch(function(err) {
+    .then(function(X) {     
+    })
+    .catch(function(err) {
         console.error(err)
     })
 

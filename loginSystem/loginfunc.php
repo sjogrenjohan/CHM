@@ -1,12 +1,11 @@
 <?php
 include '../DatabaseApi/db.php';
-// getting user information
+
 $userName = mysqli_real_escape_string($db, $_POST['username']);
 $password = mysqli_real_escape_string($db, $_POST['password']); 
 
-// grab information form database 
 $resultOfDataBase = $db->query("SELECT UserName,Password,Role,Email FROM users");
-// make an empty array to sen information into
+
 $UserDataBaseResult = [];
 $defultAdnimpostion = "not admin";
 

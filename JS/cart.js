@@ -1,3 +1,5 @@
+var totalPriceWholeCart;
+
 function makeRequest(url, method, formdata, callback) {
     fetch(url, {
         method: method,
@@ -11,6 +13,29 @@ function makeRequest(url, method, formdata, callback) {
     })
 }
 
+function confirmOrder() {
+    console.log("beep this!");
+    var todaysDate = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+    
+    var orderInfo = new FormData();
+    orderInfo.append("action", "confirmOrder")
+    orderInfo.append("orderName", document.forms["confirmPayment"]["name"].value)
+    orderInfo.append("orderAdress", document.forms["confirmPayment"]["adress"].value)
+    orderInfo.append("orderProduct", getCartItems())
+    orderInfo.append("orderDate", todaysDate)
+    orderInfo.append("totalPrice", totalPriceWholeCart)
+
+    makeRequest("./DatabaseApi/orderHandler.php", "POST", orderInfo, (response) => { console.log(response) })
+
+}
+
+/*function getShippingInfo() {
+    var shippingInfo = new FormData();
+    shippingInfo.append("collectionType", "shippingInfo")
+
+    makeRequest("./DatabaseApi/orderListHandler.php", "POST", shippingInfo, (response) => {showOrder(response)})
+}*/
+
 function getCartItems() {
     var cartData = new FormData()
     cartData.append("collectionType", "getCartItems")
@@ -19,16 +44,21 @@ function getCartItems() {
 }
 
 function showCart(products) {
-    var cartContainer = document.getElementById("cartContainer")
-    
+    var cartContainer = document.getElementById("cartContainer");
+    var totalpriceHolder = document.getElementById("totalpriceforCart");
+    var totalPriceWholeCart = 0;
+ 
     products.forEach(product => {
         var cartBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
         cartBox.querySelector('.name').innerText = product.Name;
         cartBox.querySelector('.quantity').innerText = product.nrOfItems + " st";
-        cartBox.querySelector('.price').innerText = product.UnitPrice;
-        cartBox.querySelector('.totalPrice').innerText = product.UnitPrice;
+        cartBox.querySelector('.price').innerText =  product.UnitPrice;
+        cartBox.querySelector('.totalPrice').innerText = product.UnitPrice * product.nrOfItems;
         cartContainer.appendChild(cartBox); 
+        totalPriceWholeCart += product.UnitPrice * product.nrOfItems;
     })
+    totalpriceHolder.innerHTML = totalPriceWholeCart;
+
 }
 
 function addToCart(button) {
@@ -63,6 +93,6 @@ function removeItemFromCart() {
     })
 }
 
-function confirmBuy() {
-    console.log("beep this");
-}
+
+
+

@@ -25,7 +25,7 @@ include "./includes/header.php";
                             <td class="quantity"></td>
                             <td class="price"></td>
                             <td class="totalPrice"></td>
-                            <td class="remove"><img onClick="removeItemFromCart()" src="./Images/trashcan2.png" style="width: 1.5em; height: 1.5em; cursor: pointer;"></td>
+                            <td class="remove"><img onClick="removeItemFromCart()"  src="./Images/trashcan2.png" style="width: 1.5em; height: 1.5em; cursor: pointer;"></td>
                         </tr>
                     </template>
                 </tbody>
@@ -38,7 +38,7 @@ include "./includes/header.php";
                 <button data-toggle="modal" data-target="#exampleModalCenter" data-whatever="@mdo" type="button" class="btn btn-outline-success" onclick="confirmBuy()">Slutför köp</button>
             </div>
             <div class="col-sm-2 col-md-4 col-lg-4" style="display: flex; justify-content: flex-end;">
-                <p id="totalPriceOfAllProducts">Totalt pris</p>
+                <p id="totalPriceOfAllProducts"> <span id="totalpriceforCart"></span> Totalt pris</p>
             </div>
         </div>
     </div>
@@ -58,10 +58,6 @@ include "./includes/header.php";
             <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Namn:</label>
                 <input type="text" name="name" class="form-control" id="recipient-name">
-            </div>
-            <div class="form-group">
-                <label for="message-text" class="col-form-label">Email:</label>
-                <input type="text" name="email" class="form-control" id="recipient-name">
             </div>
             <div class="form-group">
                 <label for="message-text" class="col-form-label">Adress:</label>
@@ -87,7 +83,7 @@ include "./includes/header.php";
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-dark" data-dismiss="modal">Ångra</button>
-        <button type="button" class="btn btn-dark">Bekräfta</button>
+        <button type="button" class="btn btn-dark" onclick="confirmOrder()">Bekräfta</button>
       </div>
     </div>
   </div>

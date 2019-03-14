@@ -1,13 +1,13 @@
 <?php
 
-class OrderListHandler {
+class Order {
 
     function __construct() {
         include_once('databaseHandler.php');
         $this->database = new Database();
     }
 
-    public function getOrderList() {
+    public function addOrderInfo() {
         $query = $this->database->connection->prepare("SELECT  * FROM orders;");
         $query->execute();
         $result = $query->fetchAll();
@@ -18,5 +18,3 @@ class OrderListHandler {
         return $result;
     }
 }
-
-?>
