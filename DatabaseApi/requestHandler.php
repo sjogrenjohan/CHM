@@ -5,6 +5,7 @@
     include "newsLetterHandler.php";
     include "cartHandler.php";
     include "uploadImage.php";
+    include "countCartHandler.php";
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
@@ -102,6 +103,12 @@
                 
                 echo json_encode($cartItems);
                 exit;
+            }
+            if($_POST["collectionType"] == "count") {
+                $count = new Count();
+                echo json_encode($count->makeAmount($_SESSION["cart"])); 
+                exit;
+               
             }
             
             if($_POST["collectionType"] == "deleteCartItems") {

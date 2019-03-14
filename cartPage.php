@@ -77,7 +77,7 @@ include "./includes/header.php";
                 </label>
                 </div>
             <div class="form-group">
-                <label for="recipient-name" class="col-form-label">Vill du ha vårat nyhetsbrev? <span data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="cursor: pointer;">Klicka här</span></label>
+                <label for="recipient-name" class="col-form-label">Vill du ha vårat nyhetsbrev? <span data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="cursor: pointer;" onclick="fillForm()">Klicka här</span></label>
             </div>
             </form>
       </div>

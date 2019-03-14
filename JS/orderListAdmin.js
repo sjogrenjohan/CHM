@@ -7,7 +7,10 @@ fetch('./orders.php', {
     throw new Error(response.statusText)
 })
 .then(function(response) { 
+    if(response != null){
+
         makeLIstOfOrders(response);
+    }
 }).catch(function(err) {
     console.error(err)
 }) 

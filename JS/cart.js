@@ -69,6 +69,7 @@ function addToCart(button) {
     makeRequest("./DatabaseApi/requestHandler.php", "POST", cartData , (response) => {
         console.log(response)
     })
+    reloadRequest();
 }
 
 function emptyCart() {
@@ -93,6 +94,17 @@ function removeItemFromCart() {
     })
 }
 
+function reloadRequest(data){
+    var checkthe = new FormData();
+    checkthe.append("collectionType", "count");
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", checkthe, (response) => { autocountCart(response) });
+}
 
 
+function autocountCart(amount) {
+   var getCartNumberHolder = document.getElementById("amountCount").innerHTML = amount;
+}
 
+var run = function() {
+    reloadRequest();
+}();

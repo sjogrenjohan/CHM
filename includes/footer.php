@@ -7,7 +7,7 @@
             <p class="text-sm-left">Kontakta oss: support@gmail.com</p>
         </div>
         <div class ="col-sm-3-end">
-            <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nyhetsbrev</button>
+            <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" onclick="fillForm()">Nyhetsbrev</button>
         </div>
     </div>
 </div>
