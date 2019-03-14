@@ -38,7 +38,7 @@ include "./includes/header.php";
                 <button data-toggle="modal" data-target="#exampleModalCenter" data-whatever="@mdo" type="button" class="btn btn-outline-success" onclick="confirmBuy()">Slutför köp</button>
             </div>
             <div class="col-sm-2 col-md-4 col-lg-4" style="display: flex; justify-content: flex-end;">
-                <p id="totalPriceOfAllProducts">Totalt pris</p>
+                <p id="totalPriceOfAllProducts"> <span id="totalpriceforCart"></span> Totalt pris</p>
             </div>
         </div>
     </div>
