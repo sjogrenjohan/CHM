@@ -31,6 +31,7 @@ function addProductDB() {
     addProduct.append('formProductWidth', document.forms["addProductForm"]["width"].value);
     addProduct.append('formProductLength', document.forms["addProductForm"]["length"].value);
     addProduct.append('formProductWeight', document.forms["addProductForm"]["weight"].value);
+    addProduct.append('formProductImage', document.getElementById("exampleFormControlFile1").files[0]);
 
     makeRequest("./DatabaseApi/requestHandler.php", "POST", addProduct, (response) => { console.log(response) })
 }

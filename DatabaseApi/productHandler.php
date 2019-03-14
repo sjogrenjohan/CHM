@@ -18,9 +18,9 @@
             return $result;
         }
 
-        public function insertProduct($pID, $price, $name, $pDesc, $stock, $height, $width, $length, $weight) {
-            $sql = "INSERT INTO `products`(`ProductID`, `Name`, `UnitPrice`, `ProductDescription`, `UnitsInStock`, `ProductHeight`, `ProductWidth`, `ProductLength`, `ProductWeight`) 
-            VALUES ('$pID', '$price', '$name', '$pDesc', '$stock', '$height', '$width', '$length', $weight)";
+        public function insertProduct($pID, $price, $name, $pDesc, $stock, $height, $width, $length, $weight, $image) {
+            $sql = "INSERT INTO `products`(`ProductID`, `Name`, `UnitPrice`, `ProductDescription`, `UnitsInStock`, `ProductHeight`, `ProductWidth`, `ProductLength`, `ProductWeight`, `ImageURL`) 
+            VALUES ('$pID', '$price', '$name', '$pDesc', '$stock', '$height', '$width', '$length', '$weight', '$image')";
             $query = $this->database->connection->prepare($sql);
             $res = $query->execute();
 

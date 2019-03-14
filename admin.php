@@ -16,7 +16,7 @@
                 Bredd: <input type="text" name="width" class="form-control" id="formGroupExampleInput">
                 Längd: <input type="text" name="length" class="form-control" id="formGroupExampleInput">
                 Vikt: <input type="text" name="weight" class="form-control" id="formGroupExampleInput">
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                <input type="file" name="uploadImage" class="form-control-file" id="exampleFormControlFile1">
             </div>
         </form>
     </div>
