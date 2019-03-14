@@ -2,7 +2,7 @@ fetch('./loginSystem/autoCheck.php', {
     method: 'GET',
     }).then(function(response) {
         if (response.status >= 200 && response.status < 300) {
-            return response.json()
+            return response.json();
         }
         throw new Error(response.statusText)
     })
@@ -20,3 +20,23 @@ function autofill(userInfo) {
          var Email = document.getElementById("recipient-Email").value = userInfo[1];
      }
 }
+
+fetch('./loginSystem/cartCount.php', {
+    method: 'GET',
+    }).then(function(rx) {
+        if (rx.status >= 200 && rx.status < 300) {
+            return rx.json()
+        }
+        throw new Error(rx.statusText)
+    })
+    .then(function(rx) { 
+        autocountCart(rx)
+        
+    }).catch(function(err) {
+        console.error(err)
+}) 
+
+
+function autocountCart(amount) {
+    var getCartNumberHolder = document.getElementById("amountCount").innerHTML = amount;
+} 

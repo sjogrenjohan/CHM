@@ -49,7 +49,7 @@
 
             </li>
             <li class="nav-item active">           
-              <a class="nav-link" href="cartPage.php"><i class="cartStyle fas fa-shopping-cart"></i></a>
+              <a class="nav-link" href="cartPage.php"><span id="amountCount"></span> <i class="cartStyle fas fa-shopping-cart"></i></a>
             </li>
           </ul>
         </form>
