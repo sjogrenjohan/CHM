@@ -14,10 +14,6 @@ fetch('./loginSystem/autoCheck.php', {
     console.error(err)
 }) 
 
-
-
-
-
  function autofill(userInfo) {
      for (let i = 0; i < userInfo.length; i++) {    
          var name = document.getElementById("recipient-name").value = userInfo[0];
