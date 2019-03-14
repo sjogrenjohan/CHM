@@ -105,6 +105,12 @@
                 echo json_encode($result);
             }
 
+            if($_POST["collectionType"] == "deleteSingleItemInCart") {
+                $cart = new CartHandler();
+                $result = $cart->deleteSingleItemInCart();
+                echo json_encode($result);
+            }
+
         }catch(PDOException $error) {
             http_response_code(500);
             echo json_encode($error->getMessage());

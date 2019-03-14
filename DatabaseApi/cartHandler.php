@@ -49,9 +49,22 @@
             }
         }
 
+        //Removes ALL items in cart
         public function removeAllItemsFromCart() {
             unset($_SESSION['cart']);
             return true;
+        }
+
+        //Removes a SINGLE item in cart
+        public function deleteSingleItemInCart() {
+            $itemId = $_GET["itemId"];
+            if (isset($_SESSION["cart"])) {
+                foreach ($_SESSION["cart"] as $removeItem => $value) {
+                    if($value["itemId"] == $itemId) {
+                        unset($_SESSION["cart"][$removeItem]);
+                    }
+                }
+            }
         }
 
         private function initSession() {
