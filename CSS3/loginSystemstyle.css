@@ -3,87 +3,82 @@
     margin-top: 10%;
     position: relative;
     left: 40%;
-    }
+}
     
-    input {
-        margin-bottom: 5%;
+input {
+    margin-bottom: 5%;
+}
+
+@media only screen 
+and (min-device-width : 1080px) 
+and (max-device-width : 1920px){
+    body{
+        background-image: url(../images/login.jpg);
+        background-size: cover;
     }
-    /* desktop background */
-    @media only screen 
-    and (min-device-width : 1080px) 
-    and (max-device-width : 1920px){
-           body{
-               background-image: url(../images/login.jpg);
-               background-size: cover;
-           }
-        }
-    
-    /* iphone se 5 */
-    @media only screen 
-    and (min-device-width : 320px) 
-    and (max-device-width : 568px) 
-     {
-        
-        .class {
-        width: 60% !important;
-        margin-top: 10%;
-        position: relative;
-        left: 20%;
-        
-    }
-    input {
-        margin-bottom: 7%;
-    }
-    }
-    
-    /* iphone x */
-    @media only screen 
-    and (min-device-width : 375px) 
-    and (max-device-width : 812px)
-    and (-webkit-device-pixel-ratio : 3) { 
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px){
         
     .class {
         width: 60% !important;
         margin-top: 10%;
         position: relative;
-        left: 20%;
-        
+        left: 20%;   
     }
+
+    input {
+        margin-bottom: 7%;
+    }   
+}
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 812px)
+and (-webkit-device-pixel-ratio : 3){ 
+        
+    .class {
+        width: 60% !important;
+        margin-top: 10%;
+        position: relative;
+        left: 20%;  
+    }
+
     input {
         margin-bottom: 7%;
     }
-    }
+}
     
-    /* iphone pluses */
-    @media only screen 
-    and (min-device-width : 414px) 
-    and (max-device-width : 736px) { 
-        .class {
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) { 
+    .class {
         width: 60% !important;
         margin-top: 40%;
         position: relative;
-        left: 20%;
-        
+        left: 20%;    
     }
+
     input {
         margin-bottom: 7%;
     }
-    }
+}
     
-    /* ipad */
-    @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
-    and (-webkit-min-device-pixel-ratio: 1){ 
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (-webkit-min-device-pixel-ratio: 1){ 
         
-        .class {
+    .class {
         width: 80% !important;
         margin-top: 10% !important;
         position: relative;
-        left: 10%;
-        
+        left: 10%; 
     }
+
     input {
         margin-bottom: 7%;
     }
-    }
+}

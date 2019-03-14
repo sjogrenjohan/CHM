@@ -124,5 +124,4 @@
     } else {
         echo json_encode("Not a POST request.");
     };
-
 ?>

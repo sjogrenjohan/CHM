@@ -9,35 +9,34 @@ fetch('./loginSystem/autoCheck.php', {
     .then(function(response) { 
         if(response != null) {
             autofill(response);
-            Reload();
+            
         }
     }).catch(function(err) {
         console.error(err)
-}) 
+});
 
 function autofill(userInfo) {
-     for (let i = 0; i < userInfo.length; i++) {    
+    for (let i = 0; i < userInfo.length; i++) {    
          var name = document.getElementById("recipient-name").value = userInfo[0];
          var Email = document.getElementById("recipient-Email").value = userInfo[1];
-     }
+    }   
 }
-Reload();
 
 function Reload() {
-
+    
     fetch('./loginSystem/cartCount.php', {
         method: 'GET',
-        }).then(function(rx) {
-            if (rx.status >= 200 && rx.status < 300) {
-                return rx.json()
-            }
-            throw new Error(rx.statusText)
-        })
-        .then(function(rx) { 
-            autocountCart(rx)
-            
-        }).catch(function(err) {
-            console.error(err)
+    }).then(function(rx) {
+        if (rx.status >= 200 && rx.status < 300) {
+            return rx.json()
+        }
+        throw new Error(rx.statusText)
+    })
+    .then(function(rx) { 
+        autocountCart(rx)
+        
+    }).catch(function(err) {
+        console.error(err)
     }) 
 }
 
@@ -45,5 +44,6 @@ function Reload() {
 function autocountCart(amount) {
     var getCartNumberHolder = document.getElementById("amountCount").innerHTML = amount;
     Reload();
-} 
+}
 
+Reload();

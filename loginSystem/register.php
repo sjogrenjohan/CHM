@@ -20,27 +20,27 @@ if(mysqli_num_rows($resultOfDataBase))
 {
     while($row = mysqli_fetch_assoc($resultOfDataBase)) {
          $dataOfUserName[] = $row;
-         foreach ($dataOfUserName as $key) {
+          foreach ($dataOfUserName as $key) {
           
-            
-                  if($userName == $key['UserName'] && $key['Email'] == $userEmail) {
-                 
-                     header("location: ../register.php?error=userAlreadyexist=".$userName."&mail=".$userEmail); 
-                   exit(); 
-                  } 
-                  else if($userName == $key['UserName'])
-                  {
-                    header("location: ../register.php?error=userAlreadyexist=&mail=".$userEmail); 
-                    exit();
-                  }
-                  else if($key['Email'] == $userEmail) 
-                  {
-                    header("location: ../register.php?error=userAlreadyexist=uid=".$userName); 
-                    exit();
-                  }
-              
-         }
-    }
+          
+               if($userName == $key['UserName'] && $key['Email'] == $userEmail) {
+               
+                    header("location: ../register.php?error=userAlreadyexist=".$userName."&mail=".$userEmail); 
+               exit(); 
+               } 
+               else if($userName == $key['UserName'])
+               {
+               header("location: ../register.php?error=userAlreadyexist=&mail=".$userEmail); 
+               exit();
+               }
+               else if($key['Email'] == $userEmail) 
+               {
+               header("location: ../register.php?error=userAlreadyexist=uid=".$userName); 
+               exit();
+               }
+          
+          }
+     }     
 }
 
 
