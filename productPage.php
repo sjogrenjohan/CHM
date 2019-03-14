@@ -14,7 +14,7 @@
                         <div class="card-body">
                             <p class="card-text"></p>
                             <p class="two card-text"></p>
-                            <a href="#" class="btn btn-dark">Lägg till i Kundvagn</a>
+                            <button class="btn btn-dark" onclick="addToCart(this)">Lägg till i Kundvagn</button>
                         </div>
                     </div>
                 </div>
@@ -25,6 +25,8 @@
 
 
 <script type="text/javascript" src="./JS/productLogic.js"></script>
+<script type="text/javascript" src="./JS/cart.js"></script>
+
 <script>
     var catID = "<?php echo $_GET['value']; ?>";
     getProductsInCategory(catID);

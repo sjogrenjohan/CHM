@@ -51,3 +51,18 @@ function emptyCart() {
         console.log(response)
     })
 }
+
+function removeItemFromCart() {
+    var cartData = new FormData()
+    cartData.append("collectionType", "deleteSingleItemInCart")
+    
+    location.reload(true);
+    
+    makeRequest("./DatabaseApi/requestHandler.php", "POST", cartData , (response) => {
+        console.log(response)
+    })
+}
+
+function confirmBuy() {
+    console.log("beep this");
+}

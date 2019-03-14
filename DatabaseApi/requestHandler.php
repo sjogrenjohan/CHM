@@ -80,6 +80,7 @@
                     $_POST["categoryID"]
                 );
                 echo json_encode($product);
+                exit;
             }    
         
             if($_POST["collectionType"] == "addToCart") {
@@ -101,6 +102,12 @@
             if($_POST["collectionType"] == "deleteCartItems") {
                 $cart = new CartHandler();
                 $result = $cart->removeAllItemsFromCart();
+                echo json_encode($result);
+            }
+
+            if($_POST["collectionType"] == "deleteSingleItemInCart") {
+                $cart = new CartHandler();
+                $result = $cart->deleteSingleItemInCart();
                 echo json_encode($result);
             }
 

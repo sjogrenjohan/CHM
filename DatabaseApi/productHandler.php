@@ -57,9 +57,11 @@
 
         public function getProductsInCategory($catID) {
             //$sql = "SELECT products.* FROM products JOIN `category_relations` ON products.ProductID = `category_relations`.ProductID WHERE `category_relations`.CategoryID = `G1`";
-            $sql = "SELECT products.* FROM products
+            $sql = "SELECT products.* FROM products JOIN category_relations ON products.ProductID = category_relations.ProductID WHERE category_relations.CategoryID = '$catID'";
+            
+            /*"SELECT products.* FROM products
             JOIN category_relations ON products.ProductID = category_relations.ProductID
-            WHERE category_relations.CategoryID = '$catID'";
+            WHERE category_relations.CategoryID = '$catID'";*/
 
             $query = $this->database->connection->prepare($sql);
             $query->execute();
