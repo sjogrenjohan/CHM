@@ -25,7 +25,7 @@ include "./includes/header.php";
                             <td class="quantity"></td>
                             <td class="price"></td>
                             <td class="totalPrice"></td>
-                            <td class="remove"><img onClick="removeItemFromCart()" src="./Images/trashcan2.png" style="width: 1.5em; height: 1.5em; cursor: pointer;"></td>
+                            <td class="remove"><img onClick="removeItemFromCart()"  src="./Images/trashcan2.png" style="width: 1.5em; height: 1.5em; cursor: pointer;"></td>
                         </tr>
                     </template>
                 </tbody>
