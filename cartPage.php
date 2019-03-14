@@ -61,7 +61,7 @@ include "./includes/header.php";
             </div>
             <div class="form-group">
                 <label for="message-text" class="col-form-label">Email:</label>
-                <input type="text" name="email" class="form-control" id="recipient-name">
+                <input type="text" name="email" class="form-control" id="recipient-Email">
             </div>
             <div class="form-group">
                 <label for="message-text" class="col-form-label">Adress:</label>

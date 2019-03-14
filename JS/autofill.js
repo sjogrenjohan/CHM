@@ -1,5 +1,3 @@
-
-
 fetch('./loginSystem/autoCheck.php', {
     method: 'GET',
 }).then(function(response) {
@@ -18,7 +16,12 @@ fetch('./loginSystem/autoCheck.php', {
 
 
 
- function autofill(userinfo) {
-    var name = document.getElementById("recipient-name");
-    console.log(userinfo)
+
+
+ function autofill(userInfo) {
+     for (let i = 0; i < userInfo.length; i++) {    
+         var name = document.getElementById("recipient-name").value = userInfo[0];
+         var Email = document.getElementById("recipient-Email").value = userInfo[1];
+     }
+ 
 }

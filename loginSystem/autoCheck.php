@@ -2,8 +2,10 @@
 session_start();
 if(isset($_SESSION["name"])) {
     $name = $_SESSION["name"];
-    $email = $_SESSION["Email"];
-    echo json_encode($name . $email);
+    $Email = $_SESSION["Email"];
     
+    $newarray = array($name,$Email);
+    echo json_encode($newarray); 
+
 }
 ?>
