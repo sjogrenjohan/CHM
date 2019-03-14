@@ -94,7 +94,7 @@ function removeItemFromCart() {
     })
 }
 
-function reloadRequest(data){
+function reloadRequest(){
     var checkthe = new FormData();
     checkthe.append("collectionType", "count");
     makeRequest("./DatabaseApi/requestHandler.php", "POST", checkthe, (response) => { autocountCart(response) });
