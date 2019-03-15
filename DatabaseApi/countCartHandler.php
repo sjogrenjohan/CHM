@@ -1,6 +1,5 @@
 <?php
 
-
 class Count {
 
     private $session;
