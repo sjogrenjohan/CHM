@@ -21,9 +21,9 @@ function confirmOrder() {
     orderInfo.append("action", "confirmOrder")
     orderInfo.append("orderName", document.forms["confirmPayment"]["name"].value)
     orderInfo.append("orderAdress", document.forms["confirmPayment"]["adress"].value)
-    orderInfo.append("orderProduct", getCartItems())
-    orderInfo.append("orderDate", todaysDate)
-    orderInfo.append("totalPrice", totalPriceWholeCart)
+    //orderInfo.append("orderProduct", getCartItems())
+    //orderInfo.append("orderDate", todaysDate)
+    //orderInfo.append("totalPrice", totalPriceWholeCart)
 
     makeRequest("./DatabaseApi/orderHandler.php", "POST", orderInfo, (response) => { console.log(response) })
 

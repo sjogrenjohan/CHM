@@ -1,6 +1,7 @@
 <?php
 
     include "orderClass.php";
+    session_start();
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
@@ -9,9 +10,9 @@
                 $confirm = $confirm->addOrderInfo(
                     $_POST["orderName"], 
                     $_POST["orderAdress"], 
-                    $_POST["orderProduct"], 
-                    $_POST["orderDate"], 
-                    $_POST["totalPrice"]
+                    //$_POST["orderProduct"], 
+                    //$_POST["orderDate"], 
+                    //$_POST["totalPrice"]
                 );
                 echo json_encode($confirm);
                 exit;
@@ -24,5 +25,4 @@
     } else {
         echo json_encode("Not a POST request.");
     };
-
 ?>
