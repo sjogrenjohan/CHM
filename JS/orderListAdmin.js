@@ -1,22 +1,20 @@
-fetch('./orders.php', {
-    method: 'GET',
-}).then(function(response) {
-    if (response.status >= 200 && response.status < 300) {
-        return response.json()
-    }
-    throw new Error(response.statusText)
-})
-.then(function(response) { 
-    if(response != null){
-
-        makeLIstOfOrders(response);
-    }
-}).catch(function(err) {
-    console.error(err)
-}) 
-
-
-
+function reguestOrders() {
+    fetch('./orders.php', {
+        method: 'GET',
+    }).then(function(response) {
+        if (response.status >= 200 && response.status < 300) {
+            return response.json()
+        }
+        throw new Error(response.statusText)
+    })
+    .then(function(response) { 
+        if(response != null){
+            makeLIstOfOrders(response);
+        }
+    }).catch(function(err) {
+        console.error(err)
+    }) 
+}
 
 function makeLIstOfOrders(data) {
     var newsletterContainer = document.getElementById("orderList");

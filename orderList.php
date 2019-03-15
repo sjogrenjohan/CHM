@@ -3,7 +3,7 @@
     include "./adminHeader.php";
 ?>
 
-<div class="container">
+<div class="container" onload="reguestOrders();">
         <div class="row justify-content-center">
             <table class="table table-striped">
                 <thead>
