@@ -104,12 +104,12 @@
                 echo json_encode($cartItems);
                 exit;
             }
+
             if($_POST["collectionType"] == "count") {
                 session_start();
                 $count = new Count();
                 echo json_encode($count->makeAmount($_SESSION["cart"])); 
                 exit;
-               
             }
             
             if($_POST["collectionType"] == "deleteCartItems") {
