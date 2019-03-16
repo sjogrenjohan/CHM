@@ -2,10 +2,10 @@
 >When Quality Matters
 
 **Gruppmedlemmar:**
-Jesper\ 
-Johan\ 
-Samer\ 
-Tuy-Vi\
+Jesper \ 
+Johan \ 
+Samer \ 
+Tuy-Vi \
 
 *Binero länk*
 
