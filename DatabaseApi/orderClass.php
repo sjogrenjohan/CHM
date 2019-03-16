@@ -3,27 +3,14 @@
 class Order {
 
     function __construct() {
+        session_start();
         include_once('databaseHandler.php');
         $this->database = new Database();
     }
 
-    /*public function addOrderInfo() {
-        $query = $this->database->connection->prepare("SELECT  * FROM orders;");
-        $query->execute();
-        $result = $query->fetchAll();
-
-        if (empty($result)){
-            return array("error"=> "Finns ej registrerade beställningar");
-        }
-        return $result;
-    }*/
-
     public function addOrderInfo($name, $adress) {
         $cart = $_SESSION["cart"];
         $unitPrices = $this->getUnitPriceForProducts();
-        //$pris = $unitPrices[0]->UnitPrice;
-        
-        //return array("ett pris" => $pris);
         
 	    $date = date('Y-m-d H:i:s');
 	    $costcount = 0;
@@ -86,6 +73,7 @@ class Order {
     }
 
 
+
     public function GetOrdelist() {
         $query = $this->database->connection->prepare("SELECT * FROM orders;");
             $query->execute();
@@ -96,8 +84,6 @@ class Order {
             }
             return $result;
     }
-
 }
-    
 
 ?>
