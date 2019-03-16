@@ -29,7 +29,6 @@ function showCategory(categories) {
         categoryBox.querySelector('.card-text').innerText = category.Name;
         categoryBox.querySelector('.nav-link').href = "./productPage.php?value=" + categoryID;
 
-        
         categoryContainer.appendChild(categoryBox); 
     })
 }

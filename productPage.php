@@ -22,8 +22,7 @@
         </div>
     </div>
 </div>
-
-
+    
 <script type="text/javascript" src="./JS/productLogic.js"></script>
 <script type="text/javascript" src="./JS/cart.js"></script>
 

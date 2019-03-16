@@ -19,26 +19,74 @@ class Order {
         return $result;
     }*/
 
-    public function addOrderInfo($session) {
+    public function addOrderInfo($name, $adress) {
+        $cart = $_SESSION["cart"];
+        $unitPrices = $this->getUnitPriceForProducts();
+        //$pris = $unitPrices[0]->UnitPrice;
+        
+        //return array("ett pris" => $pris);
+        
+	    $date = date('Y-m-d H:i:s');
+	    $costcount = 0;
+	    $totalCost = 0;
+        $orderstatus = "in-progress";
+        
+        $pricesArr = array();
+        $nrOfItemsArr = array();
+        $index = 0;
 
-	$session = $_SESSION["cart"];
-	$date = date('Y-m-d H:i:s');
-	$costcount = 0;
-	$totalCost = 0;
-	$orderstatus = "in-progress";
+	    foreach ($unitPrices as $Key => $product) { 
+            $pricesArr[$index] = $product["UnitPrice"];      
+            $index++;
+        }
 
-	foreach ($session as $key) {
+        $index = 0;
+        foreach ($cart as $itemId => $nrOfItems) {
+            $nrOfItemsArr[$index] = $nrOfItems;
+            $index++;
+        }
 
-      $costcount = $key['UnitPrice'] * $key['nrOfItems'];
+        $arrLength = count($pricesArr);
+        
+        for($x = 0; $x < $arrLength; $x++){
+            $totalCost +=  ($pricesArr[$x] * $nrOfItemsArr[$x]);
+        }
+        
+	    $sql = "INSERT INTO orders(Name, Adress , orderStatus, DateAdded, TotalCost) 
+        VALUES ('$name', '$adress', '$orderstatus', '$date', '$totalCost')";	
+        $query = $this->database->connection->prepare($sql);
+        $res = $query->execute();
 
-        $totalCost += $costcount;
-	}
-
-	$query = $this->database->connection->prepare("INSERT INTO `orders`( `OrderStatus`, `DateAdded`, `TotalCost`) VALUES ('{$orderstatus}','{$date}','{$totalCost}')");	
-    $query->execute();
-
-    }	
+        if($res == false){
+            return array("error"=>"Går ej att lägga till order");
+        }else{
+            return array("Status:" => "Det gick bra att lägga order");
+        }
+    }
     
+    private function getUnitPriceForProducts(){
+
+        $cart = $_SESSION["cart"];
+        //
+        $productIds = '(';
+
+        foreach ($cart as $key => $value) {
+            $productIds .= $key . ",";
+        }
+
+        $productIds = rtrim($productIds, ",");
+        $productIds .= ")";
+        //
+        $query = $this->database->connection->prepare("SELECT UnitPrice FROM products WHERE ProductID IN $productIds;");
+        $query->execute();
+        $query->setFetchMode(PDO::FETCH_ASSOC); 
+        $result = $query->fetchAll();
+
+        return $result;
+        
+    }
 
 }
+    
+
 ?>
