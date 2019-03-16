@@ -1,5 +1,5 @@
 <?php
-$db = new mysqli('localhost','root','','chmgrupp4.0');
+$db = new mysqli('localhost','root','','chmgrupp5.0');
 
     if($db->connect_errno)
     {
