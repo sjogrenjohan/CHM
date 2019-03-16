@@ -1,17 +1,13 @@
 # CHM - Computer Hardware Market
 >When Quality Matters
 
-**Gruppmedlemmar:**
-Jesper \ 
-Johan \ 
-Samer \ 
-Tuy-Vi \
+**Gruppmedlemmar:** Jesper, Johan, Samer, Tuy-Vi
 
 *Binero länk*
 
 **Admin login:**\
 Username: admin\
-Password: secret\
+Password: secret
 
 # Kravspecifikation på projektet: 
 
