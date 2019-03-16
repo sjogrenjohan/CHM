@@ -14,7 +14,7 @@ function makeRequest(url, method, formdata, callback) {
 }
 
 function confirmOrder() {
-    console.log("beep this!");
+  
     var todaysDate = new Date().toJSON().slice(0,10).replace(/-/g,'/');
     
     var orderInfo = new FormData();
