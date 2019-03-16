@@ -3,7 +3,6 @@
 class Order {
 
     function __construct() {
-        session_start();
         include_once('databaseHandler.php');
         $this->database = new Database();
     }
@@ -19,6 +18,7 @@ class Order {
         return $result;
     }*/
 
+<<<<<<< HEAD
     public function addOrderInfo($name, $adress) {
         $cart = $_SESSION["cart"];
         $unitPrices = $this->getUnitPriceForProducts();
@@ -39,6 +39,14 @@ class Order {
             $pricesArr[$index] = $product["UnitPrice"];      
             $index++;
         }
+=======
+    public function addOrderInfo($session) {
+    
+	$date = date('Y-m-d H:i:s');
+	$costcount = 0;
+	$totalCost = 0;
+	$orderstatus = "in-progress";
+>>>>>>> df1f69c03bcd303711ef8e90900fa0c901126b4f
 
         $index = 0;
         foreach ($cart as $itemId => $nrOfItems) {
@@ -46,6 +54,7 @@ class Order {
             $index++;
         }
 
+<<<<<<< HEAD
         $arrLength = count($pricesArr);
         
         for($x = 0; $x < $arrLength; $x++){
@@ -65,6 +74,12 @@ class Order {
     }
     
     private function getUnitPriceForProducts(){
+=======
+        $totalCost  += $key['UnitPrice'] * $key['nrOfItems'];
+
+       
+    }
+>>>>>>> df1f69c03bcd303711ef8e90900fa0c901126b4f
 
         $cart = $_SESSION["cart"];
         //
