@@ -9,7 +9,7 @@
 
 # Kravspecifikation på projektet: 
 
-**Alla sidor skall vara responsiva. (G)**
+**Alla sidor skall vara responsiva. (G)**\
 Vi har arbetat med bootstrap för att få sidan så responsiv som möjligt.
 
 **Arbetet ska implementeras med objektorienterade principer. (G)**
