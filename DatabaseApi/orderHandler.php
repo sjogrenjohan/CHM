@@ -1,15 +1,17 @@
 <?php
 
     include "orderClass.php";
-    session_start();
+    include "cartHandler.php";
+    
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
             if($_POST["action"] == "confirmOrder") {
+                $cart = new CartHandler();
                 $confirm = new Order();
-                $confirm = $confirm->addOrderInfo(
-                    $_POST["orderName"], 
-                    $_POST["orderAdress"], 
+                $confirm = $confirm->addOrderInfo($cart->getCartItems()
+                    //$_POST["orderName"], 
+                    //$_POST["orderAdress"], 
                     //$_POST["orderProduct"], 
                     //$_POST["orderDate"], 
                     //$_POST["totalPrice"]
