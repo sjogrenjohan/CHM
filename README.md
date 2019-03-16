@@ -5,9 +5,9 @@
 
 *Binero länk*
 
-**Admin login**\
-**Username:** admin\
-**Password:** secret\
+**Admin login:**\
+Username: admin\
+Password: secret\
 
 # Kravspecifikation på projektet: 
 
