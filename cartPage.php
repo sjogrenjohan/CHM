@@ -35,7 +35,7 @@ include "./includes/header.php";
             <div class="col-md-4 col-lg-4">
             </div>
             <div class="col-sm-2 col-md-4 col-lg-4" style="display: flex; justify-content: center;">            
-                <button data-toggle="modal" data-target="#exampleModalCenter" data-whatever="@mdo" type="button" class="btn btn-outline-success">Slutför köp</button>
+                <button data-toggle="modal" data-target="#exampleModalCenter" data-whatever="@mdo" type="button" class="btn btn-outline-success" onclick="getShippingInfo()">Slutför köp</button>
             </div>
             <div class="col-sm-2 col-md-4 col-lg-4" style="display: flex; justify-content: flex-end;">
                 <p id="totalPriceOfAllProducts"> <span id="totalpriceforCart"></span> Totalt pris</p>

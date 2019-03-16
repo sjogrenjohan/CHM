@@ -1,6 +1,7 @@
 <?php
 
     include "orderClass.php";
+    include "shippingClass.php";
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {
@@ -14,7 +15,10 @@
                 exit;
             }
             if($_POST["action"] == "getShippingInfo") {
-                
+                $shipping = new Shipping();
+                $getShit = $shipping->getShipDet();
+                echo json_encode($getShit);
+                exit;
             }
         }catch(PDOException $error) {
             http_response_code(500);
