@@ -53,7 +53,7 @@ include "./includes/header.php";
         </button>
     </div>
     <div class="modal-body">
-        <label for="recipient-name" class="col-form-label">OBS: Din faktura leveras via epost.</label>
+        <label for="recipient-name" class="col-form-label">Leveransuppgifter:</label>
         <form name="confirmPayment">
             <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Namn:</label>
@@ -63,19 +63,17 @@ include "./includes/header.php";
                 <label for="message-text" class="col-form-label">Adress:</label>
                 <input type="text" name="adress" class="form-control" id="recipient-name">
             </div>
+            
             <label for="message-text" class="col-form-label">Fraktalternativ:</label>
-            <div class="form-check">
-                <input name="homeDelivery" class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Hemleverans
-                </label>
-                </div>
-            <div class="form-check">
-                <input name="getInStore" class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                <label class="form-check-label" for="defaultCheck1">
-                    Hämta i butik
-                </label>
-                </div>
+            <div id="containerShip">
+                <template>
+                    <div class="form-check">
+                        <input name="homeDelivery" class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                        </label>
+                    </div>
+                </template>
+            </div>
             <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Vill du ha vårat nyhetsbrev? <span data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo" style="cursor: pointer;" onclick="fillForm()">Klicka här</span></label>
             </div>
@@ -88,9 +86,11 @@ include "./includes/header.php";
     </div>
   </div>
 </div>
+
+<!--<script type="text/javascript" src="./JS/order.js"></script>-->
 <script src="./JS/cart.js"></script>
 <script>
-    getCartItems()
+    getCartItems();
 </script>
 <?php
 include "./includes/footer.php";
