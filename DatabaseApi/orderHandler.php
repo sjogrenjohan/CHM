@@ -9,12 +9,12 @@
                 $confirm = $order->addOrderInfo(
                     $_POST["orderName"], 
                     $_POST["orderAdress"]
-                    //$_POST["orderProduct"], 
-                    //$_POST["orderDate"], 
-                    //$_POST["totalPrice"]
                 );
                 echo json_encode($confirm);
                 exit;
+            }
+            if($_POST["action"] == "getShippingInfo") {
+                
             }
         }catch(PDOException $error) {
             http_response_code(500);

@@ -26,9 +26,23 @@ function confirmOrder() {
     makeRequest("./DatabaseApi/orderHandler.php", "POST", orderInfo, (response) => { console.log(response) })
 }
 
-/*function getShippingInfo() {
+function getShippingInfo() {
     var shippingInfo = new FormData();
-    shippingInfo.append("collectionType", "shippingInfo")
+    shippingInfo.append("action", "getShippingInfo")
 
-    makeRequest("./DatabaseApi/orderListHandler.php", "POST", shippingInfo, (response) => {showOrder(response)})
-}*/
+    makeRequest("./DatabaseApi/orderHandler.php", "POST", shippingInfo, (response) => {showOrder(response)})
+}
+
+function showShipping(details) {
+    var categoryContainer = document.getElementById("categoryContainer")
+        
+    details.forEach(category => {
+        var categoryID = category.CategoryID;
+        var categoryBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
+        categoryBox.querySelector('.card-img-top').src = "./categoryImages/" + category.CatImage;
+        categoryBox.querySelector('.card-text').innerText = category.Name;
+        categoryBox.querySelector('.nav-link').href = "./productPage.php?value=" + categoryID;
+
+        categoryContainer.appendChild(categoryBox); 
+    })
+}
