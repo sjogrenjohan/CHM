@@ -1,7 +1,8 @@
 # CHM - Computer Hardware Market
 >When Quality Matters
 
-**Gruppmedlemmar: Jesper, Johan, Samer & Tuy-Vi**
+**Gruppmedlemmar:**
+Jesper\ Johan\ Samer\ Tuy-Vi\
 
 *Binero länk*
 
