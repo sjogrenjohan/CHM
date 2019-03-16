@@ -1,5 +1,3 @@
-var totalPriceWholeCart;
-
 function makeRequest(url, method, formdata, callback) {
     fetch(url, {
         method: method,
@@ -12,30 +10,6 @@ function makeRequest(url, method, formdata, callback) {
         console.log(err)
     })
 }
-
-function confirmOrder() {
-    console.log("beep this!");
-
-    //var todaysDate = new Date().toJSON().slice(0,10).replace(/-/g,'/');
-    
-    var orderInfo = new FormData();
-    orderInfo.append("action", "confirmOrder")
-    orderInfo.append("orderName", document.forms["confirmPayment"]["name"].value)
-    orderInfo.append("orderAdress", document.forms["confirmPayment"]["adress"].value)
-
-    //orderInfo.append("orderProduct", getCartItems())
-    //orderInfo.append("orderDate", todaysDate)
-    //orderInfo.append("totalPrice", totalPriceWholeCart)
-
-    makeRequest("./DatabaseApi/orderHandler.php", "POST", orderInfo, (response) => { console.log(response) })
-}
-
-/*function getShippingInfo() {
-    var shippingInfo = new FormData();
-    shippingInfo.append("collectionType", "shippingInfo")
-
-    makeRequest("./DatabaseApi/orderListHandler.php", "POST", shippingInfo, (response) => {showOrder(response)})
-}*/
 
 function getCartItems() {
     var cartData = new FormData()

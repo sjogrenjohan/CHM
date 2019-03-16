@@ -26,6 +26,9 @@
     <script src="JS/orderListAdmin.js"></script>
     <script src="JS/autofill.js"></script>
     <script src="JS/cart.js"></script>
+    <script src="JS/order.js"></script>
+
+
     
 
 </head>
