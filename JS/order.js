@@ -26,19 +26,16 @@ function getShippingInfo() {
     var shippingInfo = new FormData();
     shippingInfo.append("action", "getShippingInfo")
 
-    makeRequest("./DatabaseApi/orderHandler.php", "POST", shippingInfo, (response) => {console.log(response)})
+    makeRequest("./DatabaseApi/orderHandler.php", "POST", shippingInfo, (response) => { showShipping(response) })
 }
 
-/*function showShipping(details) {
-    var categoryContainer = document.getElementById("categoryContainer")
-        
-    details.forEach(category => {
-        var categoryID = category.CategoryID;
-        var categoryBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
-        categoryBox.querySelector('.card-img-top').src = "./categoryImages/" + category.CatImage;
-        categoryBox.querySelector('.card-text').innerText = category.Name;
-        categoryBox.querySelector('.nav-link').href = "./productPage.php?value=" + categoryID;
+function showShipping(details) {
+    console.log("fanskap");
+    var containerShip = document.getElementById("containerShip");
 
-        categoryContainer.appendChild(categoryBox); 
+        details.forEach(shipInfo => {
+        var detailBox = document.getElementsByTagName("template")[1].content.cloneNode(true);
+        detailBox.querySelector('.form-check-label').innerText = shipInfo.FreightCompany + " " + shipInfo.DeliveryOption + " "+ shipInfo.Cost + "kr.";
+        containerShip.appendChild(detailBox); 
     })
-}*/
+}
