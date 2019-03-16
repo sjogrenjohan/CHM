@@ -19,10 +19,6 @@ function confirmOrder() {
     orderInfo.append("orderName", document.forms["confirmPayment"]["name"].value)
     orderInfo.append("orderAdress", document.forms["confirmPayment"]["adress"].value)
 
-    //orderInfo.append("orderProduct", getCartItems())
-    //orderInfo.append("orderDate", todaysDate)
-    //orderInfo.append("totalPrice", totalPriceWholeCart)
-
     makeRequest("./DatabaseApi/orderHandler.php", "POST", orderInfo, (response) => { console.log(response) })
 }
 
@@ -30,10 +26,10 @@ function getShippingInfo() {
     var shippingInfo = new FormData();
     shippingInfo.append("action", "getShippingInfo")
 
-    makeRequest("./DatabaseApi/orderHandler.php", "POST", shippingInfo, (response) => {showOrder(response)})
+    makeRequest("./DatabaseApi/orderHandler.php", "POST", shippingInfo, (response) => {console.log(response)})
 }
 
-function showShipping(details) {
+/*function showShipping(details) {
     var categoryContainer = document.getElementById("categoryContainer")
         
     details.forEach(category => {
@@ -45,4 +41,4 @@ function showShipping(details) {
 
         categoryContainer.appendChild(categoryBox); 
     })
-}
+}*/
