@@ -21,7 +21,7 @@ Vårat första diagram som godkändes vid första inlämningsfasen, som vi sedan
 **Beskriv er företagsidé i en kort textuell presentation, detta ska lämnas in vid idégodkännandet (G)**\
 Detta gjorde vi i samband med presentationen av diagrammet.
 
-**All data som programmet utnyttjar ska vara sparat i en MYSQL databas (produkter, beställningar, konton mm) (G)**\\
+**All data som programmet utnyttjar ska vara sparat i en MYSQL databas (produkter, beställningar, konton mm) (G)**\
 Vi sparar all data i våran databas "chmgrupp".
 
 **Det ska finnas ett normaliserat diagram över databasen i gitrepot G)**\
@@ -30,7 +30,7 @@ Finns under mappen "database-diagram"
 **Man ska kunna logga in som administratör i systemet (G)**\
 Funkar utmärkt. En user som är admin och loggar in tas automatiskt till admin dashboarden.
 
-**Man ska kunna registrera sig som administratör på sidan, nya användare ska sparas i databasen (VG)**\\
+**Man ska kunna registrera sig som administratör på sidan, nya användare ska sparas i databasen (VG)**\
 Vi har inte lagt in någon funktion för admin reg. Däremot sparas nya användare i databasen.
 
 **En administratör behöver godkännas av en tidigare administratör innan man kan logga in fösta gången (VG)**\
