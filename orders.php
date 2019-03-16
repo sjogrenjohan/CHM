@@ -1,9 +1,9 @@
 <?php
-include './DatabaseApi/orderListHandler.php';
+include './DatabaseApi/orderClass.php';
 
-$orders = new OrderListHandler();
+$orders = new Order();
 
-$list = $orders->getOrderList(); 
+$list = $orders->GetOrdelist(); 
 
 echo json_encode($list);
     

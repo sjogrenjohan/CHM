@@ -85,6 +85,18 @@ class Order {
         
     }
 
+
+    public function GetOrdelist() {
+        $query = $this->database->connection->prepare("SELECT * FROM orders;");
+            $query->execute();
+            $result = $query->fetchAll();
+    
+            if (empty($result)){
+                return array("error"=> "finns inga beställningar");
+            }
+            return $result;
+    }
+
 }
     
 
