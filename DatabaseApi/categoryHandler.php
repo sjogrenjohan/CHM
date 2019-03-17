@@ -1,6 +1,6 @@
 <?php
 
-    class categoryHandler {
+    class CategoryHandler {
 
         function __construct() {
             include_once('databaseHandler.php');
