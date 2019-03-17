@@ -1,6 +1,6 @@
 <?php
-    include "./includes/html-start.php";
-    include "./adminHeader.php";
+    include "../includes/html-start.php";
+    include "../includes/adminHeader.php";
 ?>
 
 <div class="container">
@@ -33,10 +33,11 @@
             </table>
         </div>
     </div>
+    <script type="text/javascript" src="./JS/orderListAdmin.js"></script>
     <script>
-    reguestOrders();
+    requestOrders();
     </script>
  
 <?php
-    include "./includes/html-end.php";
+    include "../includes/html-end.php";
 ?>

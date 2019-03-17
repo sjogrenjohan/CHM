@@ -38,5 +38,5 @@ function showNewsletter(newsletter) {
         newsletterBox.querySelector('.name').innerText = newsletter.Name;
         newsletterBox.querySelector('.email').innerText = newsletter.Email;
         newsletterContainer.appendChild(newsletterBox); 
-    })
+    })  
 }

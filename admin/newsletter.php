@@ -1,6 +1,6 @@
 <?php
-    include "./includes/html-start.php";
-    include "./adminHeader.php";
+    include "../includes/html-start.php";
+    include "../includes/adminHeader.php";
 ?>
     <div class="container">
         <div class="row justify-content-center">
@@ -28,5 +28,5 @@
     getNewsletter();
 </script>
 <?php
-    include "./includes/html-end.php";
+    include "../includes/html-end.php";
 ?>

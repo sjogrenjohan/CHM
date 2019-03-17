@@ -1,5 +1,5 @@
 <?php
-include './DatabaseApi/orderClass.php';
+include '../DatabaseApi/orderClass.php';
 
 $orders = new Order();
 

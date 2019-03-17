@@ -2,7 +2,7 @@
     <div class="container-fluid position-relative">
         <div class="row">
             <div class="col-sm">
-                <h1 class="display-1 text-center">CHM</h1>
+                <h1 class="display-1 text-center"><a class="nav-link" style="color: white;" href="./index.php">CHM</a></h1>
                 <p class="text-center">When Quality Matters</p>
             </div>
         </div>
@@ -18,14 +18,11 @@
             <a class="nav-link" href="./categoryPage.php">Alla produkter <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Bästa priser</a>
-          </li>
-          <li class="nav-item active">
             <a class="nav-link" href="./index.php">Startsida</a>
           </li>
           <li class="nav-item active">
           <?php session_start(); if(isset($_SESSION["loggedinAdmin"])) : ?>
-            <a class="nav-link" href="./admin.php" id="adminButton">Admin</a>
+            <a class="nav-link" href="./admin/admin.php" id="adminButton">Admin</a>
             <?php else : ?>
            
             <?php endif ; ?>
