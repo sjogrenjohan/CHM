@@ -16,7 +16,7 @@ function getCategory() {
     var requestDataToPhp = new FormData()
     requestDataToPhp.append("collectionType", "categories")
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => {showCategory(response)})
+    makeRequest("./DatabaseApi/categoryHandler.php", "POST", requestDataToPhp, (response) => {showCategory(response)})
 }
 
 function showCategory(categories) {

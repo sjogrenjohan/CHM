@@ -1,7 +1,7 @@
 <?php
 
-    include "orderClass.php";
-    include "shippingClass.php";
+    include "Class/orderClass.php";
+    include "Class/shippingClass.php";
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         try {

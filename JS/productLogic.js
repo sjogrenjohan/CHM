@@ -18,7 +18,7 @@ function getProductsInCategory(catID) {
     ProdInCat.append("collectionType", "ProdInCat");
     ProdInCat.append("categoryID", catID);
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", ProdInCat, (response) => { showProduct(response) });
+    makeRequest("./DatabaseApi/productHandler.php", "POST", ProdInCat, (response) => { showProduct(response) });
 }
 
 function getProduct(numberOfProducts) {
@@ -26,7 +26,7 @@ function getProduct(numberOfProducts) {
     var requestDataToPhp = new FormData()
     requestDataToPhp.append("collectionType", "products")
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => {showProduct(response)})
+    makeRequest("./DatabaseApi/productHandler.php", "POST", requestDataToPhp, (response) => {showProduct(response)})
 }
 
 function showProduct(products) {

@@ -1,35 +1,31 @@
 <?php
+ 
+    include "Class/newsLetterClass.php";
 
-    class NewsLetter {
-
-        function __construct() {
-            include_once('databaseHandler.php');
-            $this->database = new Database();
-        }
-
-        // register newsletters
-        public function newsletterSignUp($name, $email) {
-            $sql = "INSERT INTO `newsletter_signup` (`Name`, `Email`) VALUES ('$name', '$email')";
-            $query = $this->database->connection->prepare($sql);
-            $res = $query->execute();
-
-            if($res == false){
-                return array("error"=>"Gick ej att registrera användare för nyhetsbrev.");
-            }else{
-                return array("Status:" => "Registrerad användare för nyhetsbrev.");
-            } 
-        }
-
-        public function getNewsletter() {
-            $query = $this->database->connection->prepare("SELECT * FROM newsletter_signup;");
-            $query->execute();
-            $result = $query->fetchAll();
-
-            if (empty($result)){
-                return array("error"=> "Finns ej några registrerade nyhetsbrevskunder");
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        try {
+            if($_POST["collectionType"] == "signUp") {
+                $newletter = new NewsLetter();
+                $newSignUp = $newletter->newsletterSignUp(
+                    $_POST["signUpName"],
+                    $_POST["signUpEmail"]
+                );
+                echo json_encode($newSignUp);
+                exit;
             }
-            return $result;
 
+            if($_POST["collectionType"] == "newsletter") {
+                $newsletter = new NewsLetter();
+                $getNewsletter = $newsletter->getNewsletter();
+                echo json_encode($getNewsletter);
+                exit;
+            }
+        }catch(Exception $error) {
+            http_response_code(500);
+            echo json_encode($error->getMessage());
         }
-    }
+
+    } else {
+        echo json_encode("Not a POST request.");
+    };
 ?>

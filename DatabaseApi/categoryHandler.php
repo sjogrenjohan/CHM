@@ -1,22 +1,21 @@
 <?php
 
-    class categoryHandler {
+    include "Class/categoryClass.php";
 
-        function __construct() {
-            include_once('databaseHandler.php');
-            $this->database = new Database();
-        }
-
-        public function getCategory() {
-            $query = $this->database->connection->prepare("SELECT * FROM categories;");
-            $query->execute();
-            $result = $query->fetchAll();
-    
-            if (empty($result)){
-                return array("error"=> "No worky");
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        try {
+            if($_POST["collectionType"] == "categories") {
+            $categoryHandler = new category();
+            $databaseResult = $categoryHandler->getCategory();
+            echo json_encode($databaseResult);
+            exit;
             }
-            return $result;
+        }catch(Exception $error) {
+            http_response_code(500);
+            echo json_encode($error->getMessage());
         }
-    }
 
+    } else {
+        echo json_encode("Not a POST request.");
+    };
 ?>

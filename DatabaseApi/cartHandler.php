@@ -1,79 +1,51 @@
 <?php
 
-    class CartHandler {
+    include "Class/cartClass.php";
+    include "Class/countCartClass.php";
 
-        function __construct() {
-            session_start();
-            include_once('databaseHandler.php');
-            $this->database = new Database();
-        }
-
-        public function getCartItems() {
-            $cart = $_SESSION["cart"];
-            $inBlock = $this->convertSessionCartToSQLInBlock($cart);
-            $query = $this->database->connection->prepare("SELECT * FROM products WHERE ProductID IN $inBlock;");
-            $query->execute();
-            $result = $query->fetchAll();
-
-            if (empty($result)){
-                return array("error"=> "Din kundvagn är tom");
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        try {
+            if($_POST["collectionType"] == "addToCart") {
+                $cart = new Cart();
+                $cart->addToCart($_POST["productId"]);
+                
+                echo json_encode(true);
+                exit;
+            }
+            
+            if($_POST["collectionType"] == "getCartItems") {
+                $cart = new Cart();
+                $cartItems = $cart->getCartItems();
+                
+                echo json_encode($cartItems);
+                exit;
             }
 
-            foreach ($result as $itemKey => $item) {
-                foreach ($cart as $itemId => $nrOfItems) {
-                    if ($item["ProductID"] == $itemId) {
-                        $result[$itemKey]["nrOfItems"] = $nrOfItems;
-                    }
-                }
+            if($_POST["collectionType"] == "count") {
+                session_start();
+                $count = new Count();
+                echo json_encode($count->makeAmount($_SESSION["cart"])); 
+                exit;
+            }
+            
+            if($_POST["collectionType"] == "deleteCartItems") {
+                $cart = new Cart();
+                $result = $cart->removeAllItemsFromCart();
+                echo json_encode($result);
             }
 
-            return $result;
-        }
-
-        private function convertSessionCartToSQLInBlock($cart) {
-            $productIds = '(';
-
-            foreach ($cart as $key => $value) {
-                $productIds .= $key . ",";
+            if($_POST["collectionType"] == "deleteSingleItemInCart") {
+                $cart = new Cart();
+                $result = $cart->deleteSingleItemInCart();
+                echo json_encode($result);
             }
 
-            $productIds = rtrim($productIds, ",");
-            $productIds .= ")";
-
-            return $productIds;
-        }
-        
-        public function addToCart($product) {
-            $this->initSession();
-
-            if(isset($_SESSION["cart"][$product])) {
-                $_SESSION["cart"][$product]++;
-            } else {
-                $_SESSION["cart"][$product] = 1;
-            }
+        }catch(Exception $error) {
+            http_response_code(500);
+            echo json_encode($error->getMessage());
         }
 
-        public function removeAllItemsFromCart() {
-            unset($_SESSION['cart']);
-            return true;
-        }
-
-        public function deleteSingleItemInCart() {
-            $itemId = $_GET["itemId"];
-            if (isset($_SESSION["cart"])) {
-                foreach ($_SESSION["cart"] as $removeItem => $value) {
-                    if($value["itemId"] == $itemId) {
-                        unset($_SESSION["cart"][$removeItem]);
-                    }
-                }
-            }
-        }
-
-        private function initSession() {
-            if(empty($_SESSION["cart"])) {
-                $_SESSION["cart"] = array();
-            }
-        } 
-    }
-
+    } else {
+        echo json_encode("Not a POST request.");
+    };
 ?>

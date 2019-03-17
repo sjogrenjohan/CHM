@@ -15,7 +15,7 @@ function getCartItems() {
     var cartData = new FormData()
     cartData.append("collectionType", "getCartItems")
     
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", cartData , (response) => {showCart(response)})
+    makeRequest("./DatabaseApi/cartHandler.php", "POST", cartData , (response) => {showCart(response)})
 }
 
 function showCart(products) {
@@ -41,7 +41,7 @@ function addToCart(button) {
     cartData.append("collectionType", "addToCart")
     cartData.append("productId", button.getAttribute("data-productId"))
     
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", cartData , (response) => {
+    makeRequest("./DatabaseApi/cartHandler.php", "POST", cartData , (response) => {
         console.log(response)
     })
     reloadRequest();
@@ -53,7 +53,7 @@ function emptyCart() {
 
     location.reload(true);
     
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", cartData , (response) => {
+    makeRequest("./DatabaseApi/cartHandler.php", "POST", cartData , (response) => {
         console.log(response)
     })
 }
@@ -64,7 +64,7 @@ function removeItemFromCart() {
     
     location.reload(true);
     
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", cartData , (response) => {
+    makeRequest("./DatabaseApi/cartHandler.php", "POST", cartData , (response) => {
         console.log(response)
     })
 }
@@ -72,7 +72,7 @@ function removeItemFromCart() {
 function reloadRequest(){
     var checkthe = new FormData();
     checkthe.append("collectionType", "count");
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", checkthe, (response) => { autocountCart(response) });
+    makeRequest("./DatabaseApi/cartHandler.php", "POST", checkthe, (response) => { autocountCart(response) });
 }
 
 

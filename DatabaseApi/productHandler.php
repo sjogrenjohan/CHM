@@ -1,77 +1,72 @@
 <?php
 
-    class productHandler {
+    include "Class/productClass.php";
+    include "uploadImage.php";
 
-        function __construct() {
-            include_once('databaseHandler.php');
-            $this->database = new Database();
-        }
-
-        public function getProduct() {
-            $query = $this->database->connection->prepare("SELECT * FROM products;");
-            $query->execute();
-            $result = $query->fetchAll();
-    
-            if (empty($result)){
-                return array("error"=> "Hopp, produkten du ville åt finns inte");
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+        try {
+            if($_POST["collectionType"] == "products") {
+                $productHandler = new product();
+                $databaseResult = $productHandler->getProduct();
+                echo json_encode($databaseResult);
+                exit;
             }
-            return $result;
-        }
 
-        public function insertProduct($pID, $price, $name, $pDesc, $stock, $height, $width, $length, $weight, $image) {
-            $sql = "INSERT INTO `products`(`ProductID`, `Name`, `UnitPrice`, `ProductDescription`, `UnitsInStock`, `ProductHeight`, `ProductWidth`, `ProductLength`, `ProductWeight`, `ImageURL`) 
-            VALUES ('$pID', '$price', '$name', '$pDesc', '$stock', '$height', '$width', '$length', '$weight', '$image')";
-            $query = $this->database->connection->prepare($sql);
-            $res = $query->execute();
+            if($_POST["collectionType"] == "addProduct") {
+                $productHandler = new Product();
 
-            if($res == false){
-                return array("error"=>"Går ej att lägga till produkt");
-            }else{
-                return array("Status:" => "Det gick bra");
+                $savedImageName = saveImage($_FILES["formProductImage"]);
+
+                $resultat = $productHandler->insertProduct(
+                    $_POST["formProductID"], 
+                    $_POST["formProductName"], 
+                    $_POST["formUnitPrice"], 
+                    $_POST["formProductDesc"], 
+                    $_POST["formUnitsInStock"], 
+                    $_POST["formProductHeight"], 
+                    $_POST["formProductWidth"], 
+                    $_POST["formProductLength"], 
+                    $_POST["formProductWeight"],
+                    $savedImageName
+                );
+                echo json_encode($resultat);
+                exit;
+            }
+
+            if($_POST["collectionType"] == "units") {
+                $productHandler = new product();
+                $unit = $productHandler->updateProduct(
+                    $_POST["prodID"],
+                    $_POST["updateUnit"]
+                );
+                echo json_encode($unit);
+                exit;
+            }
+
+            if($_POST ["collectionType"] == "delete") {
+                $productHandler = new product();
+                $delete = $productHandler->deleteProduct(
+                    $_POST["deleteProduct"]
+                );
+                echo json_encode($delete);
+                exit;
+            }
+
+            if($_POST["collectionType"] == "ProdInCat") {
+                $product = new product();
+                $product = $product->getProductsInCategory(
+                    $_POST["categoryID"]
+                );
+                echo json_encode($product);
+                exit;
             } 
+
+        }catch(Exception $error) {
+            http_response_code(500);
+            echo json_encode($error->getMessage());
         }
 
-        public function updateProduct($prodID, $updateUnit) {
-            $sql = "UPDATE `products` SET `UnitsInStock`= UnitsInStock + $updateUnit WHERE `ProductID`= $prodID";
-            $query = $this->database->connection->prepare($sql);
-            $res = $query->execute();
-
-            if($res == false){
-                return array("error"=>"Går ej att uppdatera lagersaldo");
-            }else{
-                return array("Status:" => "Lagersaldo uppdaterat");
-            }
-        }
-
-        public function deleteProduct($prodID) {
-            $sql = "DELETE FROM `products` WHERE `products` . `ProductID` = $prodID";
-            $query = $this->database->connection->prepare($sql);
-            $res = $query->execute();
-
-            if($res == false){
-                return array("error" => "Går ej att radera!");
-            } else {
-                return array("Status" => "produktID = $prodID är raderad.");
-            }
-        }
-
-        public function getProductsInCategory($catID) {
-            //$sql = "SELECT products.* FROM products JOIN `category_relations` ON products.ProductID = `category_relations`.ProductID WHERE `category_relations`.CategoryID = `G1`";
-            $sql = "SELECT products.* FROM products JOIN category_relations ON products.ProductID = category_relations.ProductID WHERE category_relations.CategoryID = '$catID'";
-            
-            /*"SELECT products.* FROM products
-            JOIN category_relations ON products.ProductID = category_relations.ProductID
-            WHERE category_relations.CategoryID = '$catID'";*/
-
-            $query = $this->database->connection->prepare($sql);
-            $query->execute();
-            $res = $query->fetchAll();
-
-            if (empty($res)){
-                return array("error"=> "Hopp, produkten du ville åt finns inte");
-            }
-            return $res;
-        }
-
-    }
+    } else {
+        echo json_encode("Not a POST request.");
+    };
 ?>

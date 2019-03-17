@@ -19,14 +19,14 @@ function signUp() {
     newsletter.append("signUpName", document.forms["signUpReg"]["name"].value)
     newsletter.append("signUpEmail", document.forms["signUpReg"]["email"].value)
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", newsletter, (response) => { console.log(response) })
+    makeRequest("./DatabaseApi/newsLetterHandler.php", "POST", newsletter, (response) => { console.log(response) })
 }
 
 function getNewsletter() {
     var customerNews = new FormData()
     customerNews.append("collectionType", "newsletter")
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", customerNews , (response) => {showNewsletter(response)})
+    makeRequest("./DatabaseApi/newsLetterHandler.php", "POST", customerNews , (response) => {showNewsletter(response)})
 }
 
 function showNewsletter(newsletter) {

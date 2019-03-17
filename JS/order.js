@@ -47,7 +47,3 @@ function showShipping(details) {
         containerShip.appendChild(detailBox); 
     })
 }
-
- //Stäng ner orderfönstret
-    //töm kundvagnen
-    //omdirigera till en tack för din beställning sida

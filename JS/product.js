@@ -15,7 +15,7 @@ function getProduct() {
     var requestDataToPhp = new FormData()
     requestDataToPhp.append("collectionType", "products")
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
+    makeRequest("./DatabaseApi/productHandler.php", "POST", requestDataToPhp, (response) => { console.log(response) })
 }
 
 function addProductDB() {
@@ -32,7 +32,7 @@ function addProductDB() {
     addProduct.append('formProductWeight', document.forms["addProductForm"]["weight"].value);
     addProduct.append('formProductImage', document.getElementById("exampleFormControlFile1").files[0]);
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", addProduct, (response) => { console.log(response) })
+    makeRequest("./DatabaseApi/productHandler.php", "POST", addProduct, (response) => { console.log(response) })
 }
 
 function updateProductDB() {
@@ -41,7 +41,7 @@ function updateProductDB() {
     updateUnits.append('prodID', document.forms["updateStock"]["prodID"].value) 
     updateUnits.append('updateUnit', document.forms["updateStock"]["units"].value) 
 
-    makeRequest("./DatabaseApi/requestHandler.php", "POST", updateUnits, (response) => { console.log(response) })
+    makeRequest("./DatabaseApi/productHandler.php", "POST", updateUnits, (response) => { console.log(response) })
 }
 
 function deleteProductDB() {
@@ -50,6 +50,6 @@ function deleteProductDB() {
         deleteData.append("collectionType", "delete")
         deleteData.append('deleteProduct', document.forms["deleteProduct"]["prodID"].value);
     
-        makeRequest("./DatabaseApi/requestHandler.php", "POST", deleteData, (response) => { console.log(response) })  
+        makeRequest("./DatabaseApi/productHandler.php", "POST", deleteData, (response) => { console.log(response) })  
     };
 }
