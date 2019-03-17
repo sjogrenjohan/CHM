@@ -1,13 +1,14 @@
 # CHM - Computer Hardware Market
 >When Quality Matters
 
+**Länk till hemsidan:**\
+http://xn--jesperjensensvrd-8nb.se/
+
 **Gruppmedlemmar:** Jesper, Johan, Samer, Tuy-Vi
 
-*Binero länk*
-
 **Admin login:**\
-Username: admin\
-Password: secret
+Username: bagge123\
+Password: 123
 
 # Kravspecifikation på projektet: 
 
