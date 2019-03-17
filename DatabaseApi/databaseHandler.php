@@ -5,7 +5,7 @@ class Database {
     // Sets up a connection to the database
     function __construct() {
         //$dsn = "mysql:host=localhost;dbname=chmgrupp;port=3306;charset=utf8mb4";
-        $dsn = "mysql:host=localhost;dbname=chmgrupp5.0;port=3306;charset=utf8mb4";
+        $dsn = "mysql:host=localhost;dbname=chmgrupp7.0;port=3306;charset=utf8mb4";
         $user = 'root';
         $password = '';
 
