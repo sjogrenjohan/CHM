@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <form name="updateStock">
             <div class="form-group">
-                Namn: <input type="text" name="prodID" class="form-control" id="formGroupExampleInput">
+                ProduktID: <input type="text" name="prodID" class="form-control" id="formGroupExampleInput">
                 Lagersaldo: <input type="number" name="units" class="form-control" id="formGroupExapleInput">
             </div>
         </form>

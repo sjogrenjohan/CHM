@@ -7,7 +7,6 @@
     <div class="row justify-content-center">
         <form name="addProductForm">
             <div class="form-group">
-                ProductID: <input type="text" name="prodID" class="form-control" id="formGroupExampleInput">
                 Namn: <input type="text" name="name" class="form-control" id="formGroupExampleInput">
                 Pris: <input type="text" name="unitPrice" class="form-control" id="formGroupExampleInput">
                 Produktbeskrivning: <input type="text" name="productDesc" class="form-control" id="exampleFormControlTextarea1">
