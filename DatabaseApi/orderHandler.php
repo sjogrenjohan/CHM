@@ -20,6 +20,13 @@
                 echo json_encode($getShit);
                 exit;
             }
+            if($_POST["action"] == "updateStockInOrder") {
+                $order = new Order();
+                $confirm = $order->updateStockInOrder();
+                echo json_encode($confirm);
+                exit;
+            }
+        
         }catch(PDOException $error) {
             http_response_code(500);
             echo json_encode($error->getMessage());

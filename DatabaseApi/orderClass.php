@@ -69,11 +69,48 @@ class Order {
         $result = $query->fetchAll();
 
         return $result;
-        
     }
 
+    public function updateStockInOrder(){
+
+        $cart = $_SESSION["cart"];
+ 
+         $prodIDArr = array();
+         $nrOfItemsArr = array();
+         
+         $index = 0;
+ 
+         //Hämta prodID och antal produkter för varje prodID från kundvagnen
+         foreach ($cart as $prodID => $nrOfItems) { 
+             $prodIDArr[$index] = $prodID;
+             $nrOfItemsArr[$index] = $nrOfItems;
+             $index++;
+         }
+ 
+         $arrLength = count($prodIDArr);
 
 
+         for($i = 0;$i < $arrLength;$i++){
+
+            $nrOfItems = $nrOfItemsArr[$i];
+            $prodID = $prodIDArr[$i];
+ 
+            //DETTA FUNKAR!!!!!!
+            $sql = "UPDATE products SET UnitsInStock = UnitsInStock - '$nrOfItems' WHERE ProductID = '$prodID'";
+             
+            $query = $this->database->connection->prepare($sql);
+ 
+            $query->execute();
+
+         }
+         
+         $this->database->connection = null;
+         //för test
+         return "blaj";
+ 
+     //End of updateStockInOrder() 
+     }
+    //End of class
     public function GetOrdelist() {
         $query = $this->database->connection->prepare("SELECT * FROM orders;");
             $query->execute();
