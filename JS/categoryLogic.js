@@ -27,7 +27,7 @@ function showCategory(categories) {
         var categoryBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
         categoryBox.querySelector('.card-img-top').src = "./categoryImages/" + category.CatImage;
         categoryBox.querySelector('.card-text').innerText = category.Name;
-        categoryBox.querySelector('.nav-link').href = "./productPage.php?value=" + categoryID;
+        categoryBox.querySelector('.nav-link').href = "./view/productPage.php?value=" + categoryID;
 
         categoryContainer.appendChild(categoryBox); 
     })

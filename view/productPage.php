@@ -1,6 +1,6 @@
 <?php
-    include "./includes/html-start.php";
-    include "./includes/header.php";
+    include "../includes/html-start.php";
+    include "../includes/header.php";
 ?>
 
 <div class="jumbotron">
@@ -32,6 +32,6 @@
 </script>
 
 <?php
-    include "./includes/footer.php";
-    include "./includes/html-end.php";
+    include "../includes/footer.php";
+    include "../includes/html-end.php";
 ?>
