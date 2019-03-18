@@ -1,12 +1,9 @@
 <?php
-include "./includes/html-start.php";
-include "./includes/header.php";
+    include "../includes/html-start.php";
+    include "../includes/header.php";
 ?>
-<!-- Script for product load on site -->
 
 <div class="jumbotron">
-    <img src="./Images/57.png" class="img-fluid" alt="Responsive image">
-    
     <div class="container">
         <div id="productContainer" class="row">
             <template>
@@ -25,14 +22,16 @@ include "./includes/header.php";
         </div>
     </div>
 </div>
-
+    
 <script type="text/javascript" src="./JS/productLogic.js"></script>
 <script type="text/javascript" src="./JS/cart.js"></script>
-<script>
-    getProduct(4)
-</script>
-<?php
-include "./includes/footer.php";
-include "./includes/html-end.php";
-?>
 
+<script>
+    var catID = "<?php echo $_GET['value']; ?>";
+    getProductsInCategory(catID);
+</script>
+
+<?php
+    include "../includes/footer.php";
+    include "../includes/html-end.php";
+?>

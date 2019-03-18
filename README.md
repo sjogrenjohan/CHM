@@ -1,13 +1,14 @@
 # CHM - Computer Hardware Market
 >When Quality Matters
 
+**Länk till hemsidan:**\
+http://xn--jesperjensensvrd-8nb.se/
+
 **Gruppmedlemmar:** Jesper, Johan, Samer, Tuy-Vi
 
-*Binero länk*
-
 **Admin login:**\
-Username: admin\
-Password: secret
+Username: bagge123\
+Password: 123
 
 # Kravspecifikation på projektet: 
 
@@ -15,7 +16,7 @@ Password: secret
 Vi har arbetat med bootstrap för att få sidan så responsiv som möjligt.
 
 **Arbetet ska implementeras med objektorienterade principer. (G)**\
-ÅTERKOMMER
+Det har vi gjort.
 
 **Skapa ett konceptuellt ER diagram, detta ska lämnas in vid idégodkännandet G)**\
 Vårat första diagram som godkändes vid första inlämningsfasen, som vi sedan har modifierat något.
@@ -42,10 +43,10 @@ Inte uppnåt
 Lösenord sparas som en hash
 
 **En besökare ska kunna beställa produkter från sidan, detta ska uppdatera lagersaldot i databasen (G)**\
-ÅTERKOMMER
+Lagersaldot uppdateras efter man har bekräftat köpet.
 
 **Administratörer ska kunna se en lista på alla gjorda beställningar (G)**\
-ÅTERKOMMER
+Listan syns på orderList.php i admin dashboarden
 
 **Administratörer ska kunna markera beställningar som skickade (VG)**\
 Inte uppnåt
@@ -82,7 +83,7 @@ En lista går att hitta under fliken "nyhetsbrev" i dmin dashboarden.
 Vi erbjuder antingen hemleverans eller hämta i butik när du slutför ett köp.
 
 **Tillgängliga fraktalternativ ska vara hämtade från databasen (G)**\
-ÅTERKOMMER
+Kunden har två tillgängliga fraktalternativ som hämtas från databasen när man slutför köpet.
 
 **Administratörer ska kunna redigera vilka kategorier en produkt tillhör (VG)**\
 Inte uppnåt
