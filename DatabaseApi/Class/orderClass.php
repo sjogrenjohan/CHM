@@ -82,15 +82,15 @@ class Order {
  
          //Hämta prodID och antal produkter för varje prodID från kundvagnen
          foreach ($cart as $prodID => $nrOfItems) { 
-             $prodIDArr[$index] = $prodID;
-             $nrOfItemsArr[$index] = $nrOfItems;
-             $index++;
-         }
+            $prodIDArr[$index] = $prodID;
+            $nrOfItemsArr[$index] = $nrOfItems;
+            $index++;
+        }
  
          $arrLength = count($prodIDArr);
 
 
-         for($i = 0;$i < $arrLength;$i++){
+        for($i = 0;$i < $arrLength;$i++){
 
             $nrOfItems = $nrOfItemsArr[$i];
             $prodID = $prodIDArr[$i];
@@ -102,24 +102,9 @@ class Order {
  
             $query->execute();
 
-         }
-         
-         $this->database->connection = null;
-         //för test
-         return "blaj";
+        }
+        return "blaj";
  
-     //End of updateStockInOrder() 
-     }
-    //End of class
-    public function GetOrdelist() {
-        $query = $this->database->connection->prepare("SELECT * FROM orders;");
-            $query->execute();
-            $result = $query->fetchAll();
-    
-            if (empty($result)){
-                return array("error"=> "finns inga beställningar");
-            }
-            return $result;
     }
 }
 

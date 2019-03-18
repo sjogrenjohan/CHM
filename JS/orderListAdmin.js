@@ -1,6 +1,6 @@
 function requestOrders() {
-     fetch('./admin/orders.php', {
-        method: 'GET',
+     fetch('./DatabaseApi/orders.php', {
+        method: 'POST'
     }).then(function(response) {
         if (response.status >= 200 && response.status < 300) {
             return response.json()
@@ -17,18 +17,18 @@ function requestOrders() {
 }
 
 function makeLIstOfOrders(make) {
-    var newsletterContainer = document.getElementById("orderList");
+    var orderContainer = document.getElementById("orderList");
   
     make.forEach(data => {
-        var newsletterBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
+        var orderBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
    
-        newsletterBox.querySelector('.OrderID').innerHTML = data.OrderID;
-        newsletterBox.querySelector('.Name').innerHTML = data.Name;
-        newsletterBox.querySelector('.Adress').innerHTML = data.Adress;
-        newsletterBox.querySelector('.OrderStatus').innerHTML = data.OrderStatus;
-        newsletterBox.querySelector('.Date-added').innerHTML = data.DateAdded;
-        newsletterBox.querySelector('.Total-Cost').innerHTML = data.TotalCost;
-        newsletterContainer.appendChild(newsletterBox); 
+        orderBox.querySelector('.OrderID').innerHTML = data.OrderID;
+        orderBox.querySelector('.Name').innerHTML = data.Name;
+        orderBox.querySelector('.Adress').innerHTML = data.Adress;
+        orderBox.querySelector('.OrderStatus').innerHTML = data.OrderStatus;
+        orderBox.querySelector('.Date-added').innerHTML = data.DateAdded;
+        orderBox.querySelector('.Total-Cost').innerHTML = data.TotalCost;
+        orderContainer.appendChild(orderBox); 
     })
 
 }
