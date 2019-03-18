@@ -2,7 +2,7 @@
 >When Quality Matters
 
 **Länk till hemsidan:**\
-http://xn--jesperjensensvrd-8nb.se/
+http://www.tuyvi.se
 
 **Gruppmedlemmar:** Jesper, Johan, Samer, Tuy-Vi
 
