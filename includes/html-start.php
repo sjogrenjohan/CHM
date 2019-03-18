@@ -8,7 +8,7 @@
     <title>CHM - Computer Hardware Market - When Quality Matters</title>
 
     <!-- Change base directory when uploading to Binero -->
-    <base href="http://localhost/CHM/"/>
+    <base href="http://tuyvi.se/">
 
     <!-- CSS -->
     <link rel="stylesheet" href="./CSS3/main.css">

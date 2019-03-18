@@ -23,7 +23,6 @@ function makeLIstOfOrders(make) {
         var newsletterBox = document.getElementsByTagName("template")[0].content.cloneNode(true);
    
         newsletterBox.querySelector('.OrderID').innerHTML = data.OrderID;
-        newsletterBox.querySelector('.OrderD_ID').innerHTML = data.OrderD_ID;
         newsletterBox.querySelector('.Name').innerHTML = data.Name;
         newsletterBox.querySelector('.Adress').innerHTML = data.Adress;
         newsletterBox.querySelector('.OrderStatus').innerHTML = data.OrderStatus;

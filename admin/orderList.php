@@ -9,7 +9,6 @@
                 <thead>
                     <tr>
                         <th scope="col">OrderID</th>
-                        <th scope="col">OrderD_ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Adress</th>
                         <th scope="col">OrderStatus</th>
@@ -21,7 +20,6 @@
                     <template>
                         <tr>
                             <td class="OrderID"></td>
-                            <td class="OrderD_ID"></td>
                             <td class="Name"></td>
                             <td class="Adress"></td>
                             <td class="OrderStatus"></td>
