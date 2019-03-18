@@ -1,5 +1,5 @@
 <?php
-$db = new mysqli('localhost','root','','chmgrupp7.0');
+$db = new mysqli('my77b.sqlserver.se','235426_pm13163','Munkjacka56','235426-chmgrupp7');
 
     if($db->connect_errno)
     {
