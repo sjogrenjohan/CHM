@@ -48,14 +48,14 @@
 <?php
 
 if(isset($_GET['change_to_admin'])){
-    $the_user_id=$_GET['change_to_admin'];
-    $query="UPDATE users SET 'UserName'='Admin' WHERE UserID=$the_user_id ";
+    $userId=$_GET['change_to_admin'];
+    $query="UPDATE users SET 'UserName'='Admin' WHERE UserID=$userId";
     $change_to_admin_query=mysqli_query($db,$query);
     header("Location: users-list.php"); 
 }
 if(isset($_GET['change_to_sub'])){
-    $the_user_id=$_GET['change_to_sub'];
-    $query="UPDATE users SET 'UserName'='Subsecriber' WHERE UserID=$the_user_id ";
+    $userId=$_GET['change_to_sub'];
+    $query="UPDATE users SET 'UserName'='Subsecriber' WHERE UserID=$userId";
     $change_to_sub_query=mysqli_query($db,$query);
     header("Location: users-list.php");
 }
