@@ -47,7 +47,14 @@
             <div class="col-lg-2">
                 <ul class="nav nav-pills nav-fill">
                     <li class="nav-item">
-                        <a class="nav-link" href="./admin/usersList.php">Users List</a>
+                        <a class="nav-link" href="./admin/users-list.php">Users List</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-2">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./admin/orders-list.php">Orders List</a>
                     </li>
                 </ul>
             </div>
