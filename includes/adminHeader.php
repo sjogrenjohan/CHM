@@ -44,6 +44,13 @@
                     </li>
                 </ul>
             </div>
+            <div class="col-lg-2">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./admin/usersList.php">Users List</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </header>
