@@ -11,7 +11,7 @@ $userName = mysqli_real_escape_string($db,$_POST['user']);
 $userEmail = mysqli_real_escape_string($db, $_POST['email']);
 $userPassword = mysqli_real_escape_string($db, $_POST['password']);
 $repeteUserPassword = mysqli_real_escape_string($db,$_POST['repetPassword']);
-$defultAdnimpostion = "not admin";
+/* $defultAdnimpostion = "not admin"; */
 
 $resultOfDataBase = $db->query("SELECT UserName, Email FROM users");
 $dataOfUserName = [];
