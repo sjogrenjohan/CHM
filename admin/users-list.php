@@ -21,8 +21,7 @@
     <tbody>
         <?php 
         $query = "SELECT * FROM users";
-        $connection = mysqli_connect('localhost', 'root', '', 'chmgrupp7_0');
-        $select_users = mysqli_query($connection, $query);
+        $select_users = mysqli_query($db, $query);
         while($row = mysqli_fetch_assoc($select_users)){
             $userId = $row ['UserID'];
             $UserName = $row ['UserName'];
@@ -50,14 +49,14 @@
 
 if(isset($_GET['change_to_admin'])){
     $the_user_id=$_GET['change_to_admin'];
-    $query="UPDATE users SET 'Role'='Admin' WHERE UserID=$the_user_id ";
-    $change_to_admin_query=mysqli_query($connection,$query);
+    $query="UPDATE users SET 'UserName'='Admin' WHERE UserID=$the_user_id ";
+    $change_to_admin_query=mysqli_query($db,$query);
     header("Location: users-list.php"); 
 }
 if(isset($_GET['change_to_sub'])){
     $the_user_id=$_GET['change_to_sub'];
-    $query="UPDATE users SET 'Role'='Subsecriber' WHERE UserID=$the_user_id ";
-    $change_to_sub_query=mysqli_query($connection,$query);
+    $query="UPDATE users SET 'UserName'='Subsecriber' WHERE UserID=$the_user_id ";
+    $change_to_sub_query=mysqli_query($db,$query);
     header("Location: users-list.php");
 }
 

@@ -1,6 +1,9 @@
 <?php
     include "../includes/admin-start.php";
     include "../includes/adminHeader.php";
+
+    error_reporting(0); 
+    include '../DatabaseApi/db.php';
 ?>
 
 <table class = "table table-bordered table-hover">
@@ -19,8 +22,7 @@
     <tbody>
         <?php 
         $query = "SELECT * FROM orders";
-        $connection = mysqli_connect('localhost', 'root', '', 'chmgrupp7_0');
-        $select_orders = mysqli_query($connection, $query);
+        $select_orders = mysqli_query($db, $query);
         while($row = mysqli_fetch_assoc($select_orders)){
             $OrderID = $row ['OrderID'];
             $OrderD_ID = $row ['OrderD_ID'];
