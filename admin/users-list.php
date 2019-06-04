@@ -36,8 +36,8 @@
                 echo"<td>$Password</td>";
                 echo"<td>$Role</td>";
 
-        echo"<td><a href='users-list.php?change_to_admin={$userId}'>Admin</a></td>";
-        echo"<td><a href='users-list.php?change_to_sub={$userId}'>Subsecriber</a></td>";
+        echo"<td><a href='admin/users-list.php?change_to_admin={$userId}'>Admin</a></td>";
+        echo"<td><a href='admin/users-list.php?change_to_sub={$userId}'>Subsecriber</a></td>";
             echo"</tr>";
         }
         
@@ -49,13 +49,13 @@
 
 if(isset($_GET['change_to_admin'])){
     $userId=$_GET['change_to_admin'];
-    $query="UPDATE users SET 'UserName'='Admin' WHERE UserID=$userId";
+    $query="UPDATE users SET Role ='Admin' WHERE UserID=$userId";
     $change_to_admin_query=mysqli_query($db,$query);
     header("Location: users-list.php"); 
 }
 if(isset($_GET['change_to_sub'])){
     $userId=$_GET['change_to_sub'];
-    $query="UPDATE users SET 'UserName'='Subsecriber' WHERE UserID=$userId";
+    $query="UPDATE users SET Role ='Subsecriber' WHERE UserID=$userId";
     $change_to_sub_query=mysqli_query($db,$query);
     header("Location: users-list.php");
 }
