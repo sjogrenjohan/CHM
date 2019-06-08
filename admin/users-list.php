@@ -7,6 +7,7 @@
     include '../DatabaseApi/db.php';
 ?>
 
+<br>
 <table class = "table table-bordered table-hover">
     <thead>
         <tr>

@@ -58,6 +58,13 @@
                     </li>
                 </ul>
             </div>
+            <div class="col-lg-2">
+                <ul class="nav nav-pills nav-fill">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./admin/news-letter.php">Newsletter</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </header>
