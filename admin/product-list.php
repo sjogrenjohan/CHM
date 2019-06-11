@@ -10,54 +10,48 @@
 <table class = "table table-bordered table-hover">
     <thead>
         <tr>
-            <th>ProductID</th>
-            <th>Name</th>
-            <th>UnitPrice</th>
-            <th>ProductDescription</th>
-            <th>UnitsInStock</th>
-            <th>ProductHeight</th>
-            <th>ProductWidth</th>
-            <th>ProductLength</th>
-            <th>ProductWeight</th>
-            <th>ImageURL</th>
-            <th>categories</th>
+            <th>Product ID</th>
+            <th>categories Name</th>
+            <th> product Name</th>
         </tr>
     </thead>
 
     <tbody>
-        <?php 
-        $query = "SELECT *, categories.Name AS categorieName FROM products 
-        LEFT JOIN category_relations
-        ON products.ProductID = category_relations.ProductID
-        LEFT JOIN products
-        ON  category_relations.CategoryID = categories.CategoryID
 
+
+ <!--    select *
+from
+    tableA a
+        inner join
+    tableB b
+        on a.common = b.common
+        inner join 
+    TableC c
+        on b.common = c.common -->
+
+
+
+        <?php 
+        $query = "SELECT * 
+        FROM products 
+            INNER JOIN
+        category_relations 
+        ON products.ProductID = category_relations.CategoryID
+            INNER JOIN 
+        categories 
+            ON category_relations.ProductID = categories.CategoryID
         ";
+
         $select_products = mysqli_query($db, $query);
         while($row = mysqli_fetch_assoc($select_products)){
             $ProductID = $row ['ProductID'];
             $Name = $row ['Name'];
-            $UnitPrice = $row ['UnitPrice'];
-            $ProductDescription = $row ['ProductDescription'];
-            $UnitsInStock = $row ['UnitsInStock'];
-            $ProductHeight = $row ['ProductHeight'];
-            $ProductWidth = $row ['ProductWidth'];
-            $ProductLength = $row ['ProductLength'];
-            $ProductWeight = $row ['ProductWeight'];
-            $ImageURL = $row ['ImageURL'];
-            $categories = $row ['categories'];
+            $productName = $row ['productName'];
+            $categoryName = $row ['categoryName'];
 
             echo"<tr>";
                 echo"<td>$ProductID</td>";
                 echo"<td>$Name</td>";
-                echo"<td>$UnitPrice</td>";
-                echo"<td> $ProductDescription</td>";
-                echo"<td>$UnitsInStock</td>";
-                echo"<td>$ProductHeight</td>";
-                echo"<td>$ProductWidth</td>";
-                echo"<td>$ProductLength</td>";
-                echo"<td>$ProductWeight</td>";
-                echo"<td>$ImageURL</td>";
                 echo"<td>$categories</td>";
             echo"</tr>";
         }
