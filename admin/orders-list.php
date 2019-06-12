@@ -2,8 +2,19 @@
     include "../includes/admin-start.php";
     include "../includes/adminHeader.php";
 
-    error_reporting(0); 
+    /* error_reporting(0);  */
     include '../DatabaseApi/db.php';
+
+    if(isset($_REQUEST['change_to_skickade'])){
+        $OrderD_ID=$_REQUEST['change_to_skickade'];
+        $queryU="UPDATE orders SET OrderStatus='skickade' WHERE OrderD_ID=$OrderD_ID";
+        $change_to_skickade=mysqli_query($db,$queryU);
+    }
+    if(isset($_GET['change_to_lagd'])){
+        $OrderD_ID=$_GET['change_to_lagd'];
+        $queryU="UPDATE orders SET OrderStatus='lagd' WHERE OrderD_ID=$OrderD_ID";
+        $change_to_lagd=mysqli_query($db,$queryU);
+    }
 ?>
 
 <br>
@@ -38,9 +49,12 @@
                 echo"<td>$OrderD_ID</td>";
                 echo"<td>$Name</td>";
                 echo"<td> $Adress</td>";
-                echo"<td>$OrderStatus</td>";
+                echo"<td>$OrderStatus";
                 echo"<td>$DateAdded</td>";
                 echo"<td>$TotalCost</td>";
+
+                echo"<td><a href='admin/orders-list.php?change_to_skickade={$OrderD_ID}'>Skickade</a></td>";
+                echo"<td><a href='admin/orders-list.php?change_to_lagd={$OrderD_ID}'>Lagd</a></td>";
             echo"</tr>";
         }
         ?>

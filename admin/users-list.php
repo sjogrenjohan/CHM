@@ -5,6 +5,20 @@
     error_reporting(0); 
 
     include '../DatabaseApi/db.php';
+
+    
+if(isset($_GET['change_to_admin'])){
+    $userId=$_GET['change_to_admin'];
+    $query="UPDATE users SET Role ='Admin' WHERE UserID=$userId";
+    $change_to_admin_query=mysqli_query($db,$query);
+    header("Location: users-list.php"); 
+}
+if(isset($_GET['change_to_sub'])){
+    $userId=$_GET['change_to_sub'];
+    $query="UPDATE users SET Role ='Subsecriber' WHERE UserID=$userId";
+    $change_to_sub_query=mysqli_query($db,$query);
+    header("Location: users-list.php");
+}
 ?>
 
 <br>
@@ -45,23 +59,6 @@
         ?>
     </tbody>
 </table>
-
-<?php
-
-if(isset($_GET['change_to_admin'])){
-    $userId=$_GET['change_to_admin'];
-    $query="UPDATE users SET Role ='Admin' WHERE UserID=$userId";
-    $change_to_admin_query=mysqli_query($db,$query);
-    header("Location: users-list.php"); 
-}
-if(isset($_GET['change_to_sub'])){
-    $userId=$_GET['change_to_sub'];
-    $query="UPDATE users SET Role ='Subsecriber' WHERE UserID=$userId";
-    $change_to_sub_query=mysqli_query($db,$query);
-    header("Location: users-list.php");
-}
-
-?>
 
 <?php
     include "../includes/html-end.php";
