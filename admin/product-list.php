@@ -5,10 +5,15 @@
     //error_reporting(0); 
     include '../DatabaseApi/db.php';
 
-    $categoryID = $_REQUEST['categorySave'];
-    if($categoryID > 0){
-        $categoryID = $_REQUEST['categorySave'];
-        $productIDsave = $_REQUEST['productIDsave'];
+    /* $categoryID =""; */
+  /*   if(isset($_REQUEST['submit'])){
+        $categoryID = $_REQUEST['submit'];
+        $queryU="UPDATE category_relations SET CategoryID = $categoryID WHERE ProductID= $productIDsave";
+        $change_to_categorySave=mysqli_query($db,$queryU); 
+    } */
+    if(isset($_POST['submit'])){
+        $categoryID = $_POST['submit'];
+        $productIDsave = $_POST['submit'];
         $queryU="UPDATE category_relations SET CategoryID = $categoryID WHERE ProductID= $productIDsave";
         $change_to_categorySave=mysqli_query($db,$queryU); 
     }
@@ -65,8 +70,7 @@
                         echo"<option value =".$categoryID." ".$selected.">".$categoryName."</option>";
                     }
                 echo"</select>";
-                echo"<button type = 'submit'> Spara </button>";
-                echo"<input type = 'hidden' name = 'productIDsave' value =".$ProductID.">";
+                echo"<button type = 'submit' name = 'productIDsave'".$ProductID."> Spara </button>";
                 echo '</form>';
             echo"</td>";
         echo"</tr>";
